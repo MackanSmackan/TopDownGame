@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DungeonTilemapAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+    - {fileID: 2800000, guid: dce75dc010020a24b8b8d6861f5b6b3d, type: 3}
+    - {fileID: 2800000, guid: 0c9068a85392f514fade95b2ff2fd8a2, type: 3}
+    - {fileID: 2800000, guid: 7dfda7315f554984b80cb8a959755bc9, type: 3}
+    - {fileID: 2800000, guid: 2fe8bf92bde0cbe4faf9ba9c95fa3937, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: dce75dc010020a24b8b8d6861f5b6b3d, type: 3}
+  - {fileID: 21300000, guid: 7dfda7315f554984b80cb8a959755bc9, type: 3}
+  - {fileID: 21300000, guid: 2fe8bf92bde0cbe4faf9ba9c95fa3937, type: 3}
+  - {fileID: 21300000, guid: 0c9068a85392f514fade95b2ff2fd8a2, type: 3}
+  - {fileID: 5349996985918268567, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+  - {fileID: 6120749235330249902, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+  - {fileID: 1903319650877869462, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+  - {fileID: -2256325598110615276, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+  - {fileID: -7046801908442931344, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+  - {fileID: 6830813324388110842, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+  - {fileID: 8773303320196869815, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+  - {fileID: 3674709829593746834, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+  - {fileID: -4985629637225600520, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+  - {fileID: -2025711507320866558, guid: ee75e05aff05e17479f6626633845aef, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Dungeonwallback fast slemmig
+  - Cobweb2
+  - Cobweb
+  - Skull
+  - Dungeon_Tilemap_9
+  - Dungeon_Tilemap_8
+  - Dungeon_Tilemap_1
+  - Dungeon_Tilemap_0
+  - Dungeon_Tilemap_3
+  - Dungeon_Tilemap_2
+  - Dungeon_Tilemap_5
+  - Dungeon_Tilemap_4
+  - Dungeon_Tilemap_7
+  - Dungeon_Tilemap_6
+  m_RenderDataMap: {}
+  m_Tag: DungeonTilemapAtlas
+  m_IsVariant: 0
