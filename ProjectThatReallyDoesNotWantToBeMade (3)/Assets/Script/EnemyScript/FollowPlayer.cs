@@ -7,7 +7,6 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] GameObject Ghost;
     bool CanTurnLeft = false;
     bool CanTurnRight = true;
-    bool IsRight;
     [SerializeField] Animator Animator;
     [SerializeField] float speed;
     [SerializeField] Transform Targetposition;

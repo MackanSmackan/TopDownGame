@@ -68,7 +68,7 @@ public class Shop : MonoBehaviour
 
         if (EP == 1) //what state is Epic potion in
         {
-            EpicPotion.active = true;
+            EpicPotion.SetActive(true);
             EpicPotion.transform.position = Pos1.transform.position;
             EpicPotion.transform.localScale = Pos1.transform.localScale;
         }
@@ -88,14 +88,14 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    EpicPotion.active = false;
+                    EpicPotion.SetActive(false);
                 }
             }
         }
 
         if (ES == 1) //what state is Epic Sword in
         {
-            EpicSword.active = true;
+            EpicSword.SetActive(true);
             EpicSword.transform.position = Pos1.transform.position;
             EpicSword.transform.localScale = Pos1.transform.localScale;
         }
@@ -115,14 +115,14 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    EpicSword.active = false;
+                    EpicSword.SetActive(false);
                 }
             }
         }
 
         if (CP == 1) //what state is Cool potion in
         {
-            CoolPotion.active = true;
+            CoolPotion.SetActive(true);
             CoolPotion.transform.position = Pos1.transform.position;
             CoolPotion.transform.localScale = Pos1.transform.localScale;
         }
@@ -142,14 +142,14 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    CoolPotion.active = false;
+                    CoolPotion.SetActive(false);
                 }
             }
         }
 
         if (CS == 1) //what state is Cool Sword in
         {
-            CoolSword.active = true;
+            CoolSword.SetActive(true);
             CoolSword.transform.position = Pos1.transform.position;
             CoolSword.transform.localScale = Pos1.transform.localScale;
         }
@@ -169,14 +169,14 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    CoolSword.active = false;
+                    CoolSword.SetActive(false);
                 }
             }
         }
 
         if (TE == 1) //what state is The Encyclopedia in
         {
-            TheEncyclopedia.active = true;
+            TheEncyclopedia.SetActive(true);
             TheEncyclopedia.transform.position = Pos1.transform.position;
             TheEncyclopedia.transform.localScale = Pos1.transform.localScale;
         }
@@ -196,7 +196,7 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    TheEncyclopedia.active = false;
+                    TheEncyclopedia.SetActive(false);
                 }
             }
         }

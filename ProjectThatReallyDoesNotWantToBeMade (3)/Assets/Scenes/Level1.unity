@@ -324,7 +324,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84b0eeb623d989b42a43765974d1e5da, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7127,9 +7127,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 209129257}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da77d1e6acf89c0479bd0aafec142ba7, type: 3}
+  m_Script: {fileID: 11500000, guid: c6952b52dc17fb042aeadbf01b6106f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  animatorD: {fileID: 613166947}
+  AnimatorR: {fileID: 261054307}
+  animatorU: {fileID: 691071238}
+  AnimatorL: {fileID: 926824682}
+  Up: {fileID: 691071236}
+  Down: {fileID: 613166945}
+  Left: {fileID: 926824679}
+  Right: {fileID: 261054305}
 --- !u!61 &209129259
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7256,7 +7265,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261054302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -8738,7 +8747,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691071233}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -9387,7 +9396,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926824677}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -17416,6 +17425,10 @@ PrefabInstance:
       objectReference: {fileID: 1719637907}
     - target: {fileID: 1357424707156958441, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357424707156958441, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1357424707510207215, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}

@@ -24,8 +24,6 @@ public class ÁttackGhost : MonoBehaviour
             }
             else
             {
-                collision.gameObject.GetComponent<Animator>().SetTrigger("Hurt");
-
                 collision.gameObject.GetComponent<FollowPlayer>().GhostHealth--;
             }
         }
