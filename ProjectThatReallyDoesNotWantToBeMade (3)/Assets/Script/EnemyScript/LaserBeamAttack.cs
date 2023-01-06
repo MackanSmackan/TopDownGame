@@ -36,4 +36,9 @@ public class LaserBeamAttack : MonoBehaviour
             invis = 0;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(Box.position, Box.forward);
+    }
 }
