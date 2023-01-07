@@ -20,8 +20,8 @@ public class LaserBeamAttack : MonoBehaviour
     {
         transform.Rotate(0, 0, -DegreesPerSecond * Time.deltaTime);
         invis++;
-        RaycastHit2D hit = Physics2D.Raycast(Box.position, Box.forward);
 
+        RaycastHit2D hit = Physics2D.Raycast(Box.position, Box.right, 25, Mask);
         print(hit.point);
 
         Effect.transform.position = hit.point;
@@ -35,10 +35,5 @@ public class LaserBeamAttack : MonoBehaviour
             collision.gameObject.GetComponent<Health>().health--;
             invis = 0;
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawRay(Box.position, Box.forward);
     }
 }
