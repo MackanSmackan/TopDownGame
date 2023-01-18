@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     [SerializeField] Animator Forwardanimator;
     [SerializeField] Animator Rightanimator;
     [SerializeField] Animator Backanimator;
+    public bool attacking;
 
 
     [SerializeField] Rigidbody2D rb;
@@ -67,18 +68,22 @@ public class Movement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && Forward.isVisible)
         {
+            StartCoroutine(Attacking());
             Forwardanimator.SetTrigger("Attack");
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && Left.isVisible)
         {
+            StartCoroutine(Attacking());
             Leftanimator.SetTrigger("LeftAttack");
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && Right.isVisible)
         {
+            StartCoroutine(Attacking());
             Rightanimator.SetTrigger("RightAttack");
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && Backwards.isVisible)
         {
+            StartCoroutine(Attacking());
             Backanimator.SetTrigger("BackAttack");
         }
     }
@@ -87,5 +92,12 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    IEnumerator Attacking()
+    {
+        attacking = true;
+        yield return new WaitForSeconds(3);
+        attacking = false;
     }
 }

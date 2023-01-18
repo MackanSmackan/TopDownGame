@@ -5,6 +5,7 @@ using UnityEngine;
 public class ÁttackGhost : MonoBehaviour
 {
     [SerializeField] Vector4 HurtColor;
+    [SerializeField] Movement movScript;
 
     IEnumerator Died(GameObject col)
     {
@@ -14,9 +15,9 @@ public class ÁttackGhost : MonoBehaviour
         Destroy(col);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<FollowPlayer>() != null)
+        if (collision.gameObject.GetComponent<FollowPlayer>() != null && movScript.attacking)
         {
             if (collision.gameObject.GetComponent<FollowPlayer>().GhostHealth <= 0)
             {
