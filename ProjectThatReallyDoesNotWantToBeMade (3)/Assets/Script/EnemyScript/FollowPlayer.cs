@@ -9,7 +9,7 @@ public class FollowPlayer : MonoBehaviour
     bool CanTurnRight = true;
     [SerializeField] Animator Animator;
     [SerializeField] float speed;
-    [SerializeField] Transform Targetposition;
+    public Transform Targetposition;
 
     public int GhostHealth;
 

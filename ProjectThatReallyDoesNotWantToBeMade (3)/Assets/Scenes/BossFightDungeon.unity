@@ -3712,7 +3712,7 @@ MonoBehaviour:
   - {fileID: 561722217}
   m_Bounds:
     m_Center: {x: -0.010905266, y: -0.05691874, z: 0}
-    m_Extent: {x: 1.0617442, y: 1.1161581, z: 0}
+    m_Extent: {x: 1.0617441, y: 1.1161581, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!212 &1454676603
@@ -3774,7 +3774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454676601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.79, z: 0}
+  m_LocalPosition: {x: 1.499, y: -0.531, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 349268189}
@@ -3845,7 +3845,7 @@ MonoBehaviour:
   MaxPos: {fileID: 1973210844}
   MinPos: {fileID: 766999750}
   mov: {fileID: 1357424706898168730}
-  JumpTime: 0
+  JumpTime: 2
   Health: 10
   MaxTimesAttacked: 3
   TimesAttacked: 0
@@ -4259,7 +4259,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
