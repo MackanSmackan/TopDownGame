@@ -21,6 +21,7 @@ public class MageScript : MonoBehaviour
     [SerializeField] int Health;
     [SerializeField] int MaxTimesAttacked;
     [SerializeField] int TimesAttacked;
+    [SerializeField] Transform player;
     bool invis;
 
     void Jump()
@@ -54,7 +55,7 @@ public class MageScript : MonoBehaviour
 
         if (randomnumber == 1)
         {
-            print("Spawn ghosts");
+            StartCoroutine(SpawnGhosts());
         }
         if (randomnumber == 2)
         {
@@ -64,5 +65,31 @@ public class MageScript : MonoBehaviour
         {
             print("Spawn balls");
         }
+    }
+
+    IEnumerator SpawnGhosts()
+    {
+        invis = true;
+        Vector3 Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
+        GameObject enemy1 = Instantiate(Enemy, Randompoint, this.transform.rotation);
+        enemy1.GetComponent<FollowPlayer>().Targetposition = player;
+        yield return new WaitForSeconds(0.5f);
+
+        Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
+        Instantiate(Enemy, Randompoint, this.transform.rotation);
+        yield return new WaitForSeconds(0.5f);
+
+        Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
+        Instantiate(Enemy, Randompoint, this.transform.rotation);
+        yield return new WaitForSeconds(0.5f);
+
+        Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
+        Instantiate(Enemy, Randompoint, this.transform.rotation);
+        yield return new WaitForSeconds(0.5f);
+
+        Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
+        Instantiate(Enemy, Randompoint, this.transform.rotation);
+        yield return new WaitForSeconds(8);
+        invis = false;
     }
 }
