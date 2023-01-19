@@ -59,7 +59,7 @@ public class MageScript : MonoBehaviour
         }
         if (randomnumber == 2)
         {
-            print("Spawn totem");
+            SpawnTotem();
         }
         if (randomnumber == 3)
         {
@@ -76,20 +76,22 @@ public class MageScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
-        Instantiate(Enemy, Randompoint, this.transform.rotation);
+        GameObject enemy2 = Instantiate(Enemy, Randompoint, this.transform.rotation);
+        enemy2.GetComponent<FollowPlayer>().Targetposition = player;
         yield return new WaitForSeconds(0.5f);
 
         Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
-        Instantiate(Enemy, Randompoint, this.transform.rotation);
-        yield return new WaitForSeconds(0.5f);
-
-        Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
-        Instantiate(Enemy, Randompoint, this.transform.rotation);
-        yield return new WaitForSeconds(0.5f);
-
-        Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
-        Instantiate(Enemy, Randompoint, this.transform.rotation);
-        yield return new WaitForSeconds(8);
+        GameObject enemy3 = Instantiate(Enemy, Randompoint, this.transform.rotation);
+        enemy3.GetComponent<FollowPlayer>().Targetposition = player;
+        yield return new WaitForSeconds(5f);
         invis = false;
+    }
+
+    void SpawnTotem()
+    {
+        Vector3 Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
+        GameObject totem = Instantiate(Totem, Randompoint, this.transform.rotation);
+        Vector3 OtherRandomPoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
+        totem.transform.position = Vector2.Lerp(Randompoint, this.transform.position, 5);
     }
 }

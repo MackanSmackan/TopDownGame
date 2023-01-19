@@ -3849,6 +3849,7 @@ MonoBehaviour:
   Health: 10
   MaxTimesAttacked: 3
   TimesAttacked: 0
+  player: {fileID: 1357424706898168725}
 --- !u!1 &1470160828
 GameObject:
   m_ObjectHideFlags: 0

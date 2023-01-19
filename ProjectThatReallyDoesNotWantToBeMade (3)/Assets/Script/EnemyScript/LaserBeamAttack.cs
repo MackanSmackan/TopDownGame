@@ -9,6 +9,8 @@ public class LaserBeamAttack : MonoBehaviour
     [SerializeField] Transform Effect;
     [SerializeField] LayerMask Mask;
     float invis;
+    [SerializeField] float TimeToStayAlive;
+    float timeAlive;
 
     private void Awake()
     {
@@ -18,11 +20,15 @@ public class LaserBeamAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timeAlive >= TimeToStayAlive)
+        {
+            Destroy(this.gameObject);
+        }
+        timeAlive += Time.deltaTime;
         transform.Rotate(0, 0, -DegreesPerSecond * Time.deltaTime);
         invis++;
 
         RaycastHit2D hit = Physics2D.Raycast(Box.position, Box.right, 25, Mask);
-        print(hit.point);
 
         Effect.transform.position = hit.point;
     }
