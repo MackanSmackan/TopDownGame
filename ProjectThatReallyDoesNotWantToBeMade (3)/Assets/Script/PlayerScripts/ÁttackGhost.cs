@@ -15,6 +15,15 @@ public class ÁttackGhost : MonoBehaviour
         Destroy(col);
     }
 
+    IEnumerator Knockback(Vector3 dir, GameObject Ghost)
+    {
+        Ghost.GetComponent<FollowPlayer>().enabled = false;
+        Ghost.transform.position = Vector3.MoveTowards(Ghost.transform.position, dir * 2, 1f);
+        yield return new WaitForSeconds(1);
+
+        Ghost.GetComponent<FollowPlayer>().enabled = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<FollowPlayer>() != null && movScript.attacking)
@@ -25,6 +34,11 @@ public class ÁttackGhost : MonoBehaviour
             }
             else
             {
+                Vector3 dir = collision.transform.position - this.transform.position;
+                dir.Normalize();
+
+                StartCoroutine(Knockback(dir, collision.gameObject));
+                
                 collision.gameObject.GetComponent<FollowPlayer>().GhostHealth--;
             }
         }
