@@ -13,9 +13,10 @@ public class FollowPlayer : MonoBehaviour
 
     public int GhostHealth;
 
-    void Update()
+    void FixedUpdate()
     {
-
+        Vector2 dir = Targetposition.position - this.transform.position;
+        dir.Normalize();
         if (Ghost.transform.position.x >= Targetposition.position.x && CanTurnLeft)
         {
             Animator.SetTrigger("Left");
@@ -31,7 +32,7 @@ public class FollowPlayer : MonoBehaviour
             CanTurnRight = false;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, Targetposition.position, speed * Time.deltaTime);
+        Ghost.GetComponent<Rigidbody2D>().velocity = dir * speed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
