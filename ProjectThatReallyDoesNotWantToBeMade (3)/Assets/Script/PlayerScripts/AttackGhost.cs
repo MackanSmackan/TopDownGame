@@ -14,6 +14,7 @@ public class AttackGhost : MonoBehaviour
         col.GetComponent<Animator>().SetTrigger("Died");
         yield return new WaitForSeconds(1f);
         Destroy(col);
+        this.gameObject.GetComponentInParent<Inventory>().riksdaler++;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
