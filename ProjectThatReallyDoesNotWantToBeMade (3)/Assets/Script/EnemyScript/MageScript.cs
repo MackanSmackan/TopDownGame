@@ -91,7 +91,8 @@ public class MageScript : MonoBehaviour
     {
         Vector3 Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
         GameObject totem = Instantiate(Totem, Randompoint, this.transform.rotation);
-        Vector3 OtherRandomPoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
-        totem.transform.position = Vector3.Lerp(Randompoint, this.transform.position, 5);
+        totem.GetComponent<LaserBeamAttack>().MinPos = MinPos;
+        totem.GetComponent<LaserBeamAttack>().MaxPos = MaxPos;
+        totem.GetComponent<LaserBeamAttack>().HasTransforms = true;
     }
 }

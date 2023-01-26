@@ -8,18 +8,28 @@ public class LaserBeamAttack : MonoBehaviour
     [SerializeField] float DegreesPerSecond;
     [SerializeField] Transform Effect;
     [SerializeField] LayerMask Mask;
+    public Transform MaxPos;
+    public Transform MinPos;
+    public bool HasTransforms;
+    bool HasPositions;
+    Vector2 position;
     float invis;
     [SerializeField] float TimeToStayAlive;
     float timeAlive;
 
     private void Awake()
     {
-        invis = 0;
+        invis = 0;        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (HasTransforms && !HasPositions)
+        {
+            HasPositions = true;
+            position = new Vector2(Random.Range(MinPos.position.x, MaxPos.position.x), Random.Range(MinPos.position.y, MaxPos.position.y));
+        }
         if (timeAlive >= TimeToStayAlive)
         {
             Destroy(this.gameObject);
@@ -27,6 +37,11 @@ public class LaserBeamAttack : MonoBehaviour
         timeAlive += Time.deltaTime;
         transform.Rotate(0, 0, -DegreesPerSecond * Time.deltaTime);
         invis++;
+
+        if (HasPositions)
+        {
+            this.transform.position = Vector3.Lerp(this.transform.position, position, TimeToStayAlive);
+        }
 
         RaycastHit2D hit = Physics2D.Raycast(Box.position, Box.right, 25, Mask);
 
