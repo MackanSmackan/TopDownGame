@@ -21,13 +21,14 @@ public class AttackGhost : MonoBehaviour
     { 
         if (collision.gameObject.GetComponent<FollowPlayer>() != null && movScript.attacking)
         {
-            if (collision.gameObject.GetComponent<FollowPlayer>().GhostHealth <= 0)
+            if (collision.gameObject.GetComponent<FollowPlayer>().GhostHealth <= 0 && collision.GetComponent<FollowPlayer>().Died == false)
             {
                 StartCoroutine(Died(collision.gameObject));
+                collision.GetComponent<FollowPlayer>().Died = true;
             }
             else
             {
-                Vector2 dir = new Vector2(10, 1);
+                Vector2 dir = collision.transform.position - this.transform.parent.parent.parent.position;
                 dir.Normalize();
                 StartCoroutine(DisableMove(collision.gameObject));
                 
