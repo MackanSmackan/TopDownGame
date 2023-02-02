@@ -5058,7 +5058,8 @@ MonoBehaviour:
     m_Bits: 64
   MaxPos: {fileID: 0}
   MinPos: {fileID: 0}
-  TimeToStayAlive: 30
+  HasTransforms: 0
+  TimeToStayAlive: 8
 --- !u!61 &4211985253179536146
 BoxCollider2D:
   m_ObjectHideFlags: 0

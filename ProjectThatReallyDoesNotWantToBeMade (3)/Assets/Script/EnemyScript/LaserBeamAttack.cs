@@ -40,7 +40,7 @@ public class LaserBeamAttack : MonoBehaviour
 
         if (HasPositions)
         {
-            this.transform.position = Vector3.Lerp(this.transform.position, position, TimeToStayAlive);
+            this.transform.position = Vector3.Lerp(this.transform.position - new Vector3(3,2,0), position, 5);
         }
 
         RaycastHit2D hit = Physics2D.Raycast(Box.position, Box.right, 25, Mask);
