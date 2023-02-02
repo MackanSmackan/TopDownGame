@@ -28,13 +28,16 @@ public class AttackGhost : MonoBehaviour
             }
             else
             {
-                Vector2 dir = collision.transform.position - this.transform.parent.parent.parent.position;
-                dir.Normalize();
-                StartCoroutine(DisableMove(collision.gameObject));
-                
-                collision.GetComponent<Rigidbody2D>().velocity = dir * strength;
+                if (collision.GetComponent<FollowPlayer>().Died == false)
+                {
+                    Vector2 dir = collision.transform.position - this.transform.parent.parent.parent.position;
+                    dir.Normalize();
+                    StartCoroutine(DisableMove(collision.gameObject));
 
-                collision.gameObject.GetComponent<FollowPlayer>().GhostHealth--;
+                    collision.GetComponent<Rigidbody2D>().velocity = dir * strength;
+
+                    collision.gameObject.GetComponent<FollowPlayer>().GhostHealth--;
+                }
             }
         }
     }
