@@ -16,6 +16,7 @@ public class LaserBeamAttack : MonoBehaviour
     float invis;
     [SerializeField] float TimeToStayAlive;
     float timeAlive;
+    Vector3 startpos;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class LaserBeamAttack : MonoBehaviour
         if (HasTransforms && !HasPositions)
         {
             HasPositions = true;
+            startpos = this.transform.position;
             position = new Vector2(Random.Range(MinPos.position.x, MaxPos.position.x), Random.Range(MinPos.position.y, MaxPos.position.y));
         }
         if (timeAlive >= TimeToStayAlive)
@@ -38,9 +40,12 @@ public class LaserBeamAttack : MonoBehaviour
         transform.Rotate(0, 0, -DegreesPerSecond * Time.deltaTime);
         invis++;
 
+        float completeProcent = timeAlive / TimeToStayAlive;
+        print(completeProcent);
+        
         if (HasPositions)
         {
-            this.transform.position = Vector3.Lerp(this.transform.position - new Vector3(3,2,0), position, 5);
+            this.transform.position = Vector3.Lerp(startpos, position, completeProcent);
         }
 
         RaycastHit2D hit = Physics2D.Raycast(Box.position, Box.right, 25, Mask);
