@@ -5909,6 +5909,8 @@ MonoBehaviour:
   numOfHearts: 7
   emptyHeart: {fileID: 21300000, guid: 34fd6e117b417e94ca454611ff4f04f7, type: 3}
   fullHeart: {fileID: 21300000, guid: 6cdede3446f381b4d86125ac8079b9dc, type: 3}
+  dumdumAni: {fileID: 1357424707441592557}
+  movement: {fileID: 1357424706898168730}
   hearts:
   - {fileID: 313611590}
   - {fileID: 313611589}
