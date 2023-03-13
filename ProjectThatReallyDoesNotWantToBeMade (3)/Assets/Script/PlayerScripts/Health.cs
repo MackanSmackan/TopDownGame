@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] int numOfHearts;
     [SerializeField] Sprite emptyHeart;
     [SerializeField] Sprite fullHeart;
-    [SerializeField] Animator dumdumAni;
+    [SerializeField] Animator animator;
     [SerializeField] Movement movement;
     public Image[] hearts;
     public bool IsAttacking;
@@ -46,7 +46,7 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             movement.enabled = false;
-            dumdumAni.SetTrigger("urded");
+            animator.SetTrigger("urded");
         }
 
     }
