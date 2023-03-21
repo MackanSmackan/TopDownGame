@@ -48,10 +48,17 @@ public class CameraRoomFollow : MonoBehaviour
                 {
                     StartCoroutine(SmoothTransition(Room));
                     PastRoom = CurrentRoom;
-                    CurrentRoom = Room;
-                    PastRoom.GetComponent<EnemyController>().EndAttack();
-                    CurrentRoom.GetComponent<EnemyController>().StartAttack();
-                } 
+                    if (PastRoom.GetComponent<EnemyController>() != null)
+                    {
+                        PastRoom.GetComponent<EnemyController>().EndAttack();
+                    }
+                    if (Room.GetComponent<EnemyController>() != null)
+                    {
+                        CurrentRoom = Room;
+                        Room.GetComponent<EnemyController>().StartAttack();
+                    }
+                }
+                
             }
         }
     }

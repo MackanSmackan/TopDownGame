@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     [SerializeField] Animator Forwardanimator;
     [SerializeField] Animator Rightanimator;
     [SerializeField] Animator Backanimator;
+    bool Walking;
     public bool attacking;
 
 
@@ -23,69 +24,54 @@ public class Movement : MonoBehaviour
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
-        Forwardanimator.SetFloat("HorizontalSpeed", movement.x);
         movement.y = Input.GetAxisRaw("Vertical");
-        Forwardanimator.SetFloat("VerticalSpeed", movement.y);
-
-        Leftanimator.SetFloat("HorizontalSpeed", movement.x);
-        Leftanimator.SetFloat("VerticalSpeed", movement.y);
-
-        Rightanimator.SetFloat("HorizontalSpeed", movement.x);
-        Rightanimator.SetFloat("VerticalSpeed", movement.y);
-
-        Backanimator.SetFloat("HorizontalSpeed", movement.x);
-        Backanimator.SetFloat("VerticalSpeed", movement.y);
-
-
-
-        if (movement.x == -1f && Leftanimator.GetCurrentAnimatorStateInfo(0).IsName("LeftWalk"))
+        if (Input.GetMouseButtonDown(0))
         {
+            StartCoroutine(Attacking());
+        }
+
+        if (movement.x == -1f)
+        {
+            Walking = true;
             Right.enabled = true;
             Left.enabled = false;
             Forward.enabled = false;
             Backwards.enabled = false;
         }
-        if (movement.x == 1f && Rightanimator.GetCurrentAnimatorStateInfo(0).IsName("RightWalking"))
+        if (movement.x == 1f)
         {
+            Walking = true;
             Left.enabled = true;
             Right.enabled = false;
             Forward.enabled = false;
             Backwards.enabled = false;
         }
-        if (movement.y == -1f && Forwardanimator.GetCurrentAnimatorStateInfo(0).IsName("ForwardWalking"))
+        if (movement.y == -1f)
         {
+            Walking = true;
             Right.enabled = false;
             Left.enabled = false;
             Forward.enabled = true;
             Backwards.enabled = false;
         }
-        if (movement.y == 1f && Backanimator.GetCurrentAnimatorStateInfo(0).IsName("Backwards"))
+        if (movement.y == 1f)
         {
+            Walking = true;
             Right.enabled = false;
             Left.enabled = false;
             Forward.enabled = false;
             Backwards.enabled = true;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Forward.isVisible)
+        if (movement.x == 0 && movement.y == 0)
         {
-            StartCoroutine(Attacking());
-            Forwardanimator.SetTrigger("Attack");
+            Walking = false;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Left.isVisible)
-        {
-            StartCoroutine(Attacking());
-            Leftanimator.SetTrigger("LeftAttack");
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Right.isVisible)
-        {
-            StartCoroutine(Attacking());
-            Rightanimator.SetTrigger("RightAttack");
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Backwards.isVisible)
-        {
-            StartCoroutine(Attacking());
-            Backanimator.SetTrigger("BackAttack");
-        }
+
+        Forwardanimator.SetBool("Walking", Walking);
+        Backanimator.SetBool("Walking", Walking);
+        Leftanimator.SetBool("Walking", Walking);
+        Rightanimator.SetBool("Walking", Walking);
+
     }
 
 
@@ -97,7 +83,13 @@ public class Movement : MonoBehaviour
     IEnumerator Attacking()
     {
         attacking = true;
-        yield return new WaitForSeconds(3);
+        Walking = false;
+        Forwardanimator.SetTrigger("Attack");
+        Backanimator.SetTrigger("Attack");
+        Leftanimator.SetTrigger("Attack");
+        Rightanimator.SetTrigger("Attack");
+        yield return new WaitForSeconds(1);
         attacking = false;
+        Walking = true;
     }
 }

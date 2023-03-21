@@ -17,7 +17,6 @@ public class EnemyController : MonoBehaviour
     {
         foreach (GameObject Enemy in Enemies)
         {
-            print(Enemy);
             Enemy.GetComponent<FollowPlayer>().enabled = false;
             Enemy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
