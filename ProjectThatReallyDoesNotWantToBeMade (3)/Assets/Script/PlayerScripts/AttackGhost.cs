@@ -6,6 +6,7 @@ public class AttackGhost : MonoBehaviour
 {
     [SerializeField] Vector4 HurtColor;
     [SerializeField] Movement movScript;
+    [SerializeField] GameObject Shard;
     float strength = 2;
 
     IEnumerator Died(GameObject col)
@@ -13,8 +14,8 @@ public class AttackGhost : MonoBehaviour
         col.gameObject.GetComponent<FollowPlayer>().enabled = false;
         col.GetComponent<Animator>().SetTrigger("Died");
         yield return new WaitForSeconds(1f);
+        Instantiate(Shard, col.transform.position, col.transform.rotation);
         Destroy(col);
-        this.gameObject.GetComponentInParent<Inventory>().riksdaler++;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

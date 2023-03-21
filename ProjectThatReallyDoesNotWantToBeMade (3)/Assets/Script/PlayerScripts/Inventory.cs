@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public int riksdaler;
+    public int Shards;
     // Start is called before the first frame update
-    void Start()
+    public void GetShard()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Shards++;
     }
 }
