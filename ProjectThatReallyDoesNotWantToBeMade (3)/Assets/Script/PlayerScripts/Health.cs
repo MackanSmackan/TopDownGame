@@ -46,7 +46,7 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             movement.enabled = false;
-            animator.SetTrigger("urded");
+            animator.SetTrigger("Death");
         }
 
     }

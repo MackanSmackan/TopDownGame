@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GoblinFollowPlayer : MonoBehaviour
 {
+    [SerializeField] Rigidbody2D rb;
     [SerializeField] float speed;
     float xDir;
     float yDir;
@@ -70,6 +71,12 @@ public class GoblinFollowPlayer : MonoBehaviour
                 Right.enabled = false;
             }
         }
-        transform.position = Vector2.MoveTowards(this.transform.position, Player.position, speed * Time.deltaTime);
     }
+
+    private void FixedUpdate()
+    {
+        Vector3 movement = Player.position - this.transform.position;
+        rb.velocity = movement.normalized * speed;
+    }
+
 }
