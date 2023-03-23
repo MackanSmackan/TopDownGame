@@ -400,6 +400,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 357068286694839775, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 357068286727849362, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -462,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 357068287210644410, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 357068287382889951, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: m_Enabled
@@ -23423,7 +23427,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357424706735930711}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -23889,8 +23893,8 @@ MonoBehaviour:
   - {fileID: 1357424706886819025}
   - {fileID: 1357424708028255661}
   m_Bounds:
-    m_Center: {x: -0.4824754, y: -0.2207545, z: 0}
-    m_Extent: {x: 0.453264, y: 0.6846604, z: 0}
+    m_Center: {x: -0.5523587, y: -0.05683577, z: 0}
+    m_Extent: {x: 0.5231473, y: 0.8485791, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!212 &1357424706921502087
@@ -23900,7 +23904,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357424706921502082}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
