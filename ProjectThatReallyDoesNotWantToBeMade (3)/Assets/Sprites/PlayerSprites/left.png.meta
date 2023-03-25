@@ -115,9 +115,9 @@ TextureImporter:
       length: 7.348982
       parentId: 2
     - name: bone_5
-      position: {x: 10.952074, y: 1.2155232, z: -1}
-      rotation: {x: 0, y: 0, z: 0.025406495, w: 0.99967724}
-      length: 2.9040647
+      position: {x: 9.963927, y: 2.4878817, z: -1}
+      rotation: {x: 0, y: 0, z: -0.14033087, w: 0.9901047}
+      length: 4.0478926
       parentId: 3
     - name: bone_6
       position: {x: 3.926684, y: 7.8340335, z: -6}
