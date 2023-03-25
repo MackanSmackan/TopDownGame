@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     [SerializeField] Sprite fullHeart;
     [SerializeField] Animator animator;
     [SerializeField] Movement movement;
+    [SerializeField] GameObject DeathScreen;
     public Image[] hearts;
     public bool IsAttacking;
 
@@ -47,6 +48,7 @@ public class Health : MonoBehaviour
         {
             movement.enabled = false;
             animator.SetTrigger("Death");
+            DeathScreen.active = true;
         }
 
     }
