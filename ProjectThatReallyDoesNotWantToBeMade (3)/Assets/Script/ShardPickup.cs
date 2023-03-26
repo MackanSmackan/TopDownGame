@@ -9,7 +9,7 @@ public class ShardPickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && !HasGiven)
         {
-            Destroy(this.gameObject);
+            Destroy(this.transform.parent.gameObject);
             other.gameObject.GetComponent<Inventory>().GetShard();
         }
     }
