@@ -8,17 +8,24 @@ public class EnemyController : MonoBehaviour
 
     public void StartAttack()
     {
+
         foreach (GameObject Enemy in Enemies)
         {
-            Enemy.GetComponent<FollowPlayer>().enabled = true;
+            if (Enemy != null)
+            {
+                Enemy.GetComponent<FollowPlayer>().enabled = true;
+            }
         }
     }
     public void EndAttack()
     {
-        foreach (GameObject Enemy in Enemies)
-        {
-            Enemy.GetComponent<FollowPlayer>().enabled = false;
-            Enemy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        }
+            foreach (GameObject Enemy in Enemies)
+            {
+                if (Enemy != null)
+                {
+                    Enemy.GetComponent<FollowPlayer>().enabled = false;
+                    Enemy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                }
+            }
     }
 }
