@@ -7,11 +7,16 @@ public class Health : MonoBehaviour
 {
     public int health;
     [SerializeField] int numOfHearts;
+    [SerializeField] SpriteRenderer Forward;
+    [SerializeField] SpriteRenderer Back;
+    [SerializeField] SpriteRenderer Left;
+    [SerializeField] SpriteRenderer Right;
     [SerializeField] Sprite emptyHeart;
     [SerializeField] Sprite fullHeart;
     [SerializeField] Animator animator;
     [SerializeField] Movement movement;
     [SerializeField] GameObject DeathScreen;
+    bool Died;
     public Image[] hearts;
     public bool IsAttacking;
 
@@ -44,12 +49,23 @@ public class Health : MonoBehaviour
             }
         }
 
-        if (health <= 0)
+        if (health <= 0 && !Died)
         {
-            movement.enabled = false;
-            animator.SetTrigger("Death");
-            DeathScreen.active = true;
+            StartCoroutine(Die());
         }
 
+    }
+
+    IEnumerator Die()
+    {
+        Forward.enabled = true;
+        Left.enabled = false;
+        Back.enabled = false;
+        Right.enabled = false;
+        Died = true;
+        movement.enabled = false;
+        animator.SetTrigger("Death");
+        yield return new WaitForSeconds(1.5f);
+        DeathScreen.active = true;
     }
 }

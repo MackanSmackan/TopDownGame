@@ -24624,6 +24624,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 7
   numOfHearts: 7
+  Forward: {fileID: 1357424707250433993}
+  Back: {fileID: 1357424706735930710}
+  Left: {fileID: 1357424706717564490}
+  Right: {fileID: 1357424706921502087}
   emptyHeart: {fileID: 21300000, guid: 34fd6e117b417e94ca454611ff4f04f7, type: 3}
   fullHeart: {fileID: 21300000, guid: 6cdede3446f381b4d86125ac8079b9dc, type: 3}
   animator: {fileID: 1357424707250433995}
