@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Shop : MonoBehaviour
 {
+    public string LoadLevel;
     [Header("Objects")]
     [SerializeField] GameObject DDoL; //D(ont)D(estroy)o(n)L(oad)
     [SerializeField] GameObject CoolSword;
@@ -31,9 +32,14 @@ public class Shop : MonoBehaviour
         DontDestroyOnLoad(DDoL.gameObject);
     }
 
-    public void Sword()
+
+
+    private void Update()
     {
-        DDoL.GetComponent<ItemsBoughtInShop>().SwordMultiplier = 1.25f;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(LoadLevel);
+        }
     }
 
     public void SwitchMainItems()
@@ -202,4 +208,14 @@ public class Shop : MonoBehaviour
         }
 
     }
+
+    void BuySword(float IncreaseStrenght)
+    {
+        DDoL.GetComponent<ItemsBoughtInShop>().SwordMultiplier = IncreaseStrenght;
+    }
+    void BuyPotion()
+    {
+
+    }
+
 }
