@@ -10,6 +10,7 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] Animator Animator;
     [SerializeField] float speed;
     public Transform Targetposition;
+    bool Damaged;
     public bool Died;
 
     public int GhostHealth;
@@ -38,9 +39,31 @@ public class FollowPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player" && !Died)
+        if (collision.gameObject.name == "Player" && !Died && !Damaged)
         {
-            collision.gameObject.GetComponent<Health>().health--;
+            StartCoroutine(TakeDamageCollision(collision));
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Player" && !Died && !Damaged)
+        {
+            StartCoroutine(TakeDamageTrigger(collision));
+        }
+    }
+
+    IEnumerator TakeDamageTrigger(Collider2D col)
+    {
+        col.gameObject.GetComponent<Health>().health--;
+        Damaged = true;
+        yield return new WaitForSeconds(0.2f);
+        Damaged = false;
+    }
+    IEnumerator TakeDamageCollision(Collision2D col)
+    {
+        col.gameObject.GetComponent<Health>().health--;
+        Damaged = true;
+        yield return new WaitForSeconds(0.2f);
+        Damaged = false;
     }
 }
