@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemsBoughtInShop : MonoBehaviour
+public class DontDestroyShardCounter : MonoBehaviour
 {
-    public int SwordMultiplier;
+    public int Shards;
 }

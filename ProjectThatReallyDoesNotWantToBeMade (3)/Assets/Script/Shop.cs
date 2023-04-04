@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Shop : MonoBehaviour
 {
+    int Shards;
     public string LoadLevel;
     [Header("Objects")]
-    [SerializeField] GameObject DDoL; //D(ont)D(estroy)o(n)L(oad)
+    GameObject DDoL; //D(ont)D(estroy)o(n)L(oad)
     [SerializeField] GameObject CoolSword;
     [SerializeField] GameObject EpicSword;
     [SerializeField] GameObject EpicPotion;
@@ -29,7 +30,8 @@ public class Shop : MonoBehaviour
     
     private void Awake()
     {
-        DontDestroyOnLoad(DDoL.gameObject);
+        DDoL = GameObject.FindGameObjectWithTag("DontDestroyOnLoad");
+        Shards = DDoL.GetComponent<DontDestroyShardCounter>().Shards;
     }
 
 
@@ -209,13 +211,14 @@ public class Shop : MonoBehaviour
 
     }
 
-    void BuySword(float IncreaseStrenght)
+    public void BuyEpicSword()
     {
-        DDoL.GetComponent<ItemsBoughtInShop>().SwordMultiplier = IncreaseStrenght;
+        if (30 <= Shards)
+        {
+            print(Shards);
+            Shards = Shards - 30;
+            DDoL.GetComponent<DontDestroyShardCounter>().Shards = Shards;
+            DDoL.GetComponent<ItemsBoughtInShop>().SwordMultiplier = 2;
+        }
     }
-    void BuyPotion()
-    {
-
-    }
-
 }

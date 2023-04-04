@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class AttackGhost : MonoBehaviour
 {
+    GameObject DDoL;
+    int AttackPower;
     [SerializeField] Vector4 HurtColor;
     [SerializeField] Movement movScript;
     [SerializeField] GameObject Shard;
     [SerializeField] GameObject Heart;
     float strength = 2;
 
+    private void Awake()
+    {
+        DDoL = GameObject.FindGameObjectWithTag("DontDestroyOnLoad");
+        AttackPower = DDoL.GetComponent<ItemsBoughtInShop>().SwordMultiplier;
+    }
     IEnumerator Died(GameObject col)
     {
         col.gameObject.GetComponent<FollowPlayer>().enabled = false;
@@ -47,7 +54,7 @@ public class AttackGhost : MonoBehaviour
 
                     collision.GetComponent<Rigidbody2D>().velocity = dir * strength;
 
-                    collision.gameObject.GetComponent<FollowPlayer>().GhostHealth--;
+                    collision.gameObject.GetComponent<FollowPlayer>().GhostHealth = collision.gameObject.GetComponent<FollowPlayer>().GhostHealth - AttackPower;
                 }
             }
         }
