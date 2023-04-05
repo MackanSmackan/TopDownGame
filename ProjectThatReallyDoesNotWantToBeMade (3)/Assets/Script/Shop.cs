@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Shop : MonoBehaviour
     [SerializeField] GameObject EpicPotion;
     [SerializeField] GameObject CoolPotion;
     [SerializeField] GameObject TheEncyclopedia;
+    [SerializeField] Text CostText;
 
     [Header("States")]
     [SerializeField] int CS;
@@ -86,6 +88,7 @@ public class Shop : MonoBehaviour
             {
                 EpicPotion.transform.position = Pos2.transform.position;
                 EpicPotion.transform.localScale = Pos2.transform.localScale;
+                CostText.text = "X 40";
             }
             else
             {
@@ -113,6 +116,7 @@ public class Shop : MonoBehaviour
             {
                 EpicSword.transform.position = Pos2.transform.position;
                 EpicSword.transform.localScale = Pos2.transform.localScale;
+                CostText.text = "X 30";
             }
             else
             {
@@ -140,6 +144,7 @@ public class Shop : MonoBehaviour
             {
                 CoolPotion.transform.position = Pos2.transform.position;
                 CoolPotion.transform.localScale = Pos2.transform.localScale;
+                CostText.text = "X 25";
             }
             else
             {
@@ -167,6 +172,7 @@ public class Shop : MonoBehaviour
             {
                 CoolSword.transform.position = Pos2.transform.position;
                 CoolSword.transform.localScale = Pos2.transform.localScale;
+                CostText.text = "X 50";
             }
             else
             {
@@ -194,6 +200,7 @@ public class Shop : MonoBehaviour
             {
                 TheEncyclopedia.transform.position = Pos2.transform.position;
                 TheEncyclopedia.transform.localScale = Pos2.transform.localScale;
+                CostText.text = "X 10";
             }
             else
             {

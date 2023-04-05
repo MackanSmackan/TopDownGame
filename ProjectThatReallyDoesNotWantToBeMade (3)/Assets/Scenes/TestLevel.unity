@@ -9834,7 +9834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c3efba37ff57541b4842413f3277e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shards: 45
+  Shards: 0
 --- !u!4 &1545212867
 Transform:
   m_ObjectHideFlags: 0
