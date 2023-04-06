@@ -24891,6 +24891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1357424706613534622, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1357424707156958436, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -24975,10 +24979,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1357424707358221776, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1357424707510207215, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2008435847}
+    - target: {fileID: 1630603247425389137, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25105044
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603247425389137, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3624276
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248248131954, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3088581
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248248131954, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.015596643
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
 --- !u!4 &1357424706720115891 stripped
