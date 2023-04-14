@@ -10,12 +10,17 @@ public class AttackGhost : MonoBehaviour
     [SerializeField] Movement movScript;
     [SerializeField] GameObject Shard;
     [SerializeField] GameObject Heart;
+    bool FoundDDoL;
     float strength = 2;
 
-    private void Awake()
+    private void Update()
     {
-        DDoL = GameObject.FindGameObjectWithTag("DontDestroyOnLoad");
-        AttackPower = DDoL.GetComponent<ItemsBoughtInShop>().SwordMultiplier;
+        if (!FoundDDoL)
+        {
+            DDoL = GameObject.FindGameObjectWithTag("DontDestroyOnLoad");
+            AttackPower = DDoL.GetComponent<ItemsBoughtInShop>().SwordMultiplier;
+            FoundDDoL = true;
+        }
     }
     IEnumerator Died(GameObject col)
     {
@@ -57,6 +62,10 @@ public class AttackGhost : MonoBehaviour
                     collision.gameObject.GetComponent<FollowPlayer>().GhostHealth = collision.gameObject.GetComponent<FollowPlayer>().GhostHealth - AttackPower;
                 }
             }
+        }
+        else if (collision.gameObject.GetComponent<GoblinFollowPlayer>() != null && movScript.attacking)
+        {
+
         }
     }
 

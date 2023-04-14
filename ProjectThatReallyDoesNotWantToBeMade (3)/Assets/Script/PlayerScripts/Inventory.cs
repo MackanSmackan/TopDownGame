@@ -6,14 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField] GameObject DDoLPrefab;
     GameObject DDoL;
     public int Shards;
     [SerializeField] Text text;
     private void Awake()
     {
-        DDoL = GameObject.FindGameObjectWithTag("DontDestroyOnLoad");
-        DontDestroyOnLoad(DDoL);
-        Shards = DDoL.GetComponent<DontDestroyShardCounter>().Shards;
+        if (GameObject.FindGameObjectWithTag("DontDestroyOnLoad") != null)
+        {
+            DDoL = GameObject.FindGameObjectWithTag("DontDestroyOnLoad");
+            Shards = DDoL.GetComponent<DontDestroyShardCounter>().Shards;
+            text.text = "Shards: " + Shards;
+        }
+        else
+        {
+            DDoL = Instantiate(DDoLPrefab);
+            DontDestroyOnLoad(DDoL);
+            Shards = DDoL.GetComponent<DontDestroyShardCounter>().Shards;
+            text.text = "Shards: " + Shards;
+        }
+        
     }
     // Start is called before the first frame update
     public void GetShard()

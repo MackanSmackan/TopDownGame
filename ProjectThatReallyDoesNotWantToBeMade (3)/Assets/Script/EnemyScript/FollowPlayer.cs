@@ -37,13 +37,6 @@ public class FollowPlayer : MonoBehaviour
         Ghost.GetComponent<Rigidbody2D>().velocity = dir * speed;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Player" && !Died && !Damaged)
-        {
-            StartCoroutine(TakeDamageCollision(collision));
-        }
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player" && !Died && !Damaged)

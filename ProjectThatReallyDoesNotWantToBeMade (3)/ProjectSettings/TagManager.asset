@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shard
   - DontDestroyOnLoad
+  - Enemy
   layers:
   - Default
   - TransparentFX
