@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class GoblinFollowPlayer : MonoBehaviour
 {
+    [Header("Circle around player")]
+    [SerializeField] bool reverse;
+    [SerializeField] float Radius;
+    [SerializeField] float CircleSpeed;
+    float CurrentStep;
+
+    [Header("Movement")]
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float speed;
-    [SerializeField] float DetectDistance;
-    [SerializeField] float CircleDistance;
-    [SerializeField] float Radius;
-    [SerializeField] float Steps;
-    float CurrentStep;
 
     float xDir;
     float yDir;
     Transform Player;
     Vector3 TargetPos;
 
+    [Header("Animators")]
     [SerializeField] Animator animatorD;
     [SerializeField] Animator AnimatorR;
     [SerializeField] Animator animatorU;
@@ -26,6 +29,9 @@ public class GoblinFollowPlayer : MonoBehaviour
     [SerializeField] SpriteRenderer Down;
     [SerializeField] SpriteRenderer Left;
     [SerializeField] SpriteRenderer Right;
+
+    public int Health;
+    public bool died;
 
 
 
@@ -82,7 +88,7 @@ public class GoblinFollowPlayer : MonoBehaviour
             }
         }
         
-        if (Steps >= CurrentStep)
+        if (CircleSpeed >= CurrentStep)
         {
             DrawCircle();
         }
@@ -91,18 +97,30 @@ public class GoblinFollowPlayer : MonoBehaviour
             CurrentStep = 0;
         }
 
-        rb.velocity = TargetPos - this.transform.position;
+        rb.velocity = (TargetPos - this.transform.position).normalized * speed;
     }
 
     void DrawCircle()
     {
-        float Progress = CurrentStep / Steps;
+        float Progress = CurrentStep / CircleSpeed;
         float thisRad = Progress * 2 * Mathf.PI;
 
         float Xscale = Mathf.Cos(thisRad);
         float Yscale = Mathf.Sin(thisRad);
 
-        TargetPos = new Vector3(Xscale * Radius, Yscale * Radius, 0) + Player.position;
+        if (reverse)
+        {
+            TargetPos = new Vector3(-Xscale * Radius, -Yscale * Radius, 0) + Player.position;
+        }
+        else
+        {
+            TargetPos = new Vector3(Xscale * Radius, Yscale * Radius, 0) + Player.position;
+        }
         CurrentStep += Time.deltaTime;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawCube(TargetPos, new Vector3(0.5f, 0.5f, 1));
     }
 }

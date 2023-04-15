@@ -44,32 +44,37 @@ public class AttackGhost : MonoBehaviour
     { 
         if (collision.gameObject.GetComponent<FollowPlayer>() != null && movScript.attacking)
         {
-            if (collision.gameObject.GetComponent<FollowPlayer>().GhostHealth <= 0 && collision.GetComponent<FollowPlayer>().Died == false)
-            {
-                StartCoroutine(Died(collision.gameObject));
-                collision.GetComponent<FollowPlayer>().Died = true;
-            }
-            else
             {
                 if (collision.GetComponent<FollowPlayer>().Died == false)
                 {
                     Vector2 dir = collision.transform.position - this.transform.parent.parent.parent.position;
                     dir.Normalize();
-                    StartCoroutine(DisableMove(collision.gameObject));
+                    StartCoroutine(DisableMoveGhost(collision.gameObject));
 
                     collision.GetComponent<Rigidbody2D>().velocity = dir * strength;
 
                     collision.gameObject.GetComponent<FollowPlayer>().GhostHealth = collision.gameObject.GetComponent<FollowPlayer>().GhostHealth - AttackPower;
+                    if (collision.gameObject.GetComponent<FollowPlayer>().GhostHealth <= 0 && collision.GetComponent<FollowPlayer>().Died == false)
+                    {
+                        StartCoroutine(Died(collision.gameObject));
+                        collision.GetComponent<FollowPlayer>().Died = true;
+                    }
                 }
             }
         }
         else if (collision.gameObject.GetComponent<GoblinFollowPlayer>() != null && movScript.attacking)
         {
-
+            if (!collision.gameObject.GetComponent<GoblinFollowPlayer>().died && movScript.attacking)
+            {
+                collision.gameObject.GetComponent<GoblinFollowPlayer>().Health = collision.gameObject.GetComponent<GoblinFollowPlayer>().Health - AttackPower;
+                Vector2 dir = collision.transform.position - this.transform.parent.parent.parent.position;
+                dir.Normalize();
+                collision.GetComponent<Rigidbody2D>().velocity = dir * strength;
+            }
         }
     }
 
-    IEnumerator DisableMove(GameObject col)
+    IEnumerator DisableMoveGhost(GameObject col)
     {
         col.GetComponent<Animator>().enabled = false;
         col.GetComponent<FollowPlayer>().enabled = false;
