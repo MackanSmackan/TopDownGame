@@ -274,8 +274,8 @@ RectTransform:
   - {fileID: 1553701740}
   - {fileID: 210743344}
   - {fileID: 1243069780}
-  - {fileID: 407388224}
   - {fileID: 300106246}
+  - {fileID: 407388224}
   - {fileID: 1208572476}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 210743346}
   - component: {fileID: 210743345}
   m_Layer: 5
-  m_Name: EpicPotion (1)
+  m_Name: Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 210743346}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 501877402}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuySpeedPotion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &210743346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,9 +531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Cool potion
-
-'
+  m_Text: Health potion
 --- !u!222 &266246619
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -636,7 +646,7 @@ RectTransform:
   - {fileID: 1839694533}
   - {fileID: 327938645}
   m_Father: {fileID: 203154261}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -686,7 +696,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 300106248}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 501877402}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyTheEncylopedia
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &300106248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1077,7 +1099,7 @@ RectTransform:
   m_LocalScale: {x: 1.9881, y: 1.9881, z: 1.9881}
   m_Children: []
   m_Father: {fileID: 203154261}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1293,15 +1315,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadLevel: TestLevel
   CoolSword: {fileID: 1553701739}
-  EpicSword: {fileID: 1302756377}
-  EpicPotion: {fileID: 210743343}
-  CoolPotion: {fileID: 1243069779}
+  SpeedyShoes: {fileID: 1302756377}
+  SpeedPotion: {fileID: 210743343}
+  HealthPotion: {fileID: 1243069779}
   TheEncyclopedia: {fileID: 300106245}
   CostText: {fileID: 709675300}
   CS: 4
   ES: 2
-  EP: 1
-  CP: 3
+  SP: 1
+  HP: 3
   TE: 5
   Pos1: {fileID: 1187833107}
   Pos2: {fileID: 1021628117}
@@ -1792,9 +1814,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Epic potion
-
-'
+  m_Text: Speed potion
 --- !u!222 &756829097
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1803,50 +1823,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756829094}
   m_CullTransparentMesh: 1
---- !u!1 &861330903
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 861330905}
-  - component: {fileID: 861330904}
-  m_Layer: 0
-  m_Name: ShopItems
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &861330904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861330903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af357858bda5ae4ab767249b91ea840, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SwordMultiplier: 0
---- !u!4 &861330905
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861330903}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 864.4588, y: 512.50397, z: -363.31558}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1998208126}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &941191328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,7 +2316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.35566974, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2546,7 +2522,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Epic Sword
+  m_Text: 'Speedy boots
 
 '
 --- !u!222 &1239148053
@@ -2570,7 +2546,7 @@ GameObject:
   - component: {fileID: 1243069782}
   - component: {fileID: 1243069781}
   m_Layer: 5
-  m_Name: CoolPotion (2)
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2640,7 +2616,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1243069782}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 501877402}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyHealthPotion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1243069782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2692,7 +2680,7 @@ GameObject:
   - component: {fileID: 1302756380}
   - component: {fileID: 1302756379}
   m_Layer: 5
-  m_Name: EpicSword (1)
+  m_Name: SpeedShoes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2765,7 +2753,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 501877402}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: BuyEpicSword
+        m_MethodName: BuySpeedShoes
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3325,7 +3313,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1553701742}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 501877401}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1553701742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3421,7 +3421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 67769037f6ff0944b9cfdb6466fbf439, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55ad4b6109677be42b239f450ce98c29, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3600,7 +3600,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 460626193}
-  - {fileID: 861330905}
   - {fileID: 5988009081661220532}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -3735,7 +3734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9ac8d9ab0e55429448251be822d15b73, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 678095381d851334fb550c5032ba1a81, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8645,7 +8644,7 @@ Transform:
   - {fileID: 7044278534641597865}
   - {fileID: 4547868451766268298}
   m_Father: {fileID: 1998208126}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7044278534641597865
 Transform:

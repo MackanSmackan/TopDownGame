@@ -5,23 +5,12 @@ using UnityEngine;
 public class AttackGhost : MonoBehaviour
 {
     GameObject DDoL;
-    int AttackPower;
+    int AttackPower = 1;
     [SerializeField] Vector4 HurtColor;
     [SerializeField] Movement movScript;
     [SerializeField] GameObject Shard;
     [SerializeField] GameObject Heart;
-    bool FoundDDoL;
     float strength = 2;
-
-    private void Update()
-    {
-        if (!FoundDDoL)
-        {
-            DDoL = GameObject.FindGameObjectWithTag("DontDestroyOnLoad");
-            AttackPower = DDoL.GetComponent<ItemsBoughtInShop>().SwordMultiplier;
-            FoundDDoL = true;
-        }
-    }
     IEnumerator Died(GameObject col)
     {
         col.gameObject.GetComponent<FollowPlayer>().enabled = false;

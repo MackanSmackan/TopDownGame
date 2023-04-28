@@ -11,17 +11,17 @@ public class Shop : MonoBehaviour
     [Header("Objects")]
     GameObject DDoL; //D(ont)D(estroy)o(n)L(oad)
     [SerializeField] GameObject CoolSword;
-    [SerializeField] GameObject EpicSword;
-    [SerializeField] GameObject EpicPotion;
-    [SerializeField] GameObject CoolPotion;
+    [SerializeField] GameObject SpeedyShoes;
+    [SerializeField] GameObject SpeedPotion;
+    [SerializeField] GameObject HealthPotion;
     [SerializeField] GameObject TheEncyclopedia;
     [SerializeField] Text CostText;
 
     [Header("States")]
     [SerializeField] int CS;
     [SerializeField] int ES;
-    [SerializeField] int EP;
-    [SerializeField] int CP;
+    [SerializeField] int SP;
+    [SerializeField] int HP;
     [SerializeField] int TE;
 
     [Header("Positions")]
@@ -50,8 +50,8 @@ public class Shop : MonoBehaviour
     {
         CS++;
         ES++;
-        EP++;
-        CP++;
+        SP++;
+        HP++;
         TE++;
 
         if (CS > 5)
@@ -62,13 +62,13 @@ public class Shop : MonoBehaviour
         {
             ES = 1;
         }
-        if (CP > 5)
+        if (HP > 5)
         {
-            CP = 1;
+            HP = 1;
         }
-        if (EP > 5)
+        if (SP > 5)
         {
-            EP = 1;
+            SP = 1;
         }
 
         if (TE > 5)
@@ -76,86 +76,86 @@ public class Shop : MonoBehaviour
             TE = 1;
         }
 
-        if (EP == 1) //what state is Epic potion in
+        if (SP == 1) //what state is SPic potion in
         {
-            EpicPotion.SetActive(true);
-            EpicPotion.transform.position = Pos1.transform.position;
-            EpicPotion.transform.localScale = Pos1.transform.localScale;
+            SpeedPotion.SetActive(true);
+            SpeedPotion.transform.position = Pos1.transform.position;
+            SpeedPotion.transform.localScale = Pos1.transform.localScale;
         }
         else
         {
-            if (EP == 2)
+            if (SP == 2)
             {
-                EpicPotion.transform.position = Pos2.transform.position;
-                EpicPotion.transform.localScale = Pos2.transform.localScale;
-                CostText.text = "X 40";
+                SpeedPotion.transform.position = Pos2.transform.position;
+                SpeedPotion.transform.localScale = Pos2.transform.localScale;
+                CostText.text = "X 10";
             }
             else
             {
-                if (EP == 3)
+                if (SP == 3)
                 {
-                    EpicPotion.transform.position = Pos3.transform.position;
-                    EpicPotion.transform.localScale = Pos3.transform.localScale;
+                    SpeedPotion.transform.position = Pos3.transform.position;
+                    SpeedPotion.transform.localScale = Pos3.transform.localScale;
                 }
                 else
                 {
-                    EpicPotion.SetActive(false);
+                    SpeedPotion.SetActive(false);
                 }
             }
         }
 
-        if (ES == 1) //what state is Epic Sword in
+        if (ES == 1) //what state is SPic Sword in
         {
-            EpicSword.SetActive(true);
-            EpicSword.transform.position = Pos1.transform.position;
-            EpicSword.transform.localScale = Pos1.transform.localScale;
+            SpeedyShoes.SetActive(true);
+            SpeedyShoes.transform.position = Pos1.transform.position;
+            SpeedyShoes.transform.localScale = Pos1.transform.localScale;
         }
         else
         {
             if (ES == 2)
             {
-                EpicSword.transform.position = Pos2.transform.position;
-                EpicSword.transform.localScale = Pos2.transform.localScale;
-                CostText.text = "X 30";
+                SpeedyShoes.transform.position = Pos2.transform.position;
+                SpeedyShoes.transform.localScale = Pos2.transform.localScale;
+                CostText.text = "X 150";
             }
             else
             {
                 if (ES == 3)
                 {
-                    EpicSword.transform.position = Pos3.transform.position;
-                    EpicSword.transform.localScale = Pos3.transform.localScale;
+                    SpeedyShoes.transform.position = Pos3.transform.position;
+                    SpeedyShoes.transform.localScale = Pos3.transform.localScale;
                 }
                 else
                 {
-                    EpicSword.SetActive(false);
+                    SpeedyShoes.SetActive(false);
                 }
             }
         }
 
-        if (CP == 1) //what state is Cool potion in
+        if (HP == 1) //what state is Cool potion in
         {
-            CoolPotion.SetActive(true);
-            CoolPotion.transform.position = Pos1.transform.position;
-            CoolPotion.transform.localScale = Pos1.transform.localScale;
+            HealthPotion.SetActive(true);
+            HealthPotion.transform.position = Pos1.transform.position;
+            HealthPotion.transform.localScale = Pos1.transform.localScale;
         }
         else
         {
-            if (CP == 2)
+            if (HP == 2)
             {
-                CoolPotion.transform.position = Pos2.transform.position;
-                CoolPotion.transform.localScale = Pos2.transform.localScale;
-                CostText.text = "X 25";
+                HealthPotion.transform.position = Pos2.transform.position;
+                HealthPotion.transform.localScale = Pos2.transform.localScale;
+                CostText.text = "X 10";
             }
             else
             {
-                if (CP == 3)
+                if (HP == 3)
                 {
-                    CoolPotion.transform.position = Pos3.transform.position;
-                    CoolPotion.transform.localScale = Pos3.transform.localScale;
+                    HealthPotion.transform.position = Pos3.transform.position;
+                    HealthPotion.transform.localScale = Pos3.transform.localScale;
                 }
                 else
                 {
-                    CoolPotion.SetActive(false);
+                    HealthPotion.SetActive(false);
                 }
             }
         }
@@ -200,7 +200,7 @@ public class Shop : MonoBehaviour
             {
                 TheEncyclopedia.transform.position = Pos2.transform.position;
                 TheEncyclopedia.transform.localScale = Pos2.transform.localScale;
-                CostText.text = "X 10";
+                CostText.text = "X 100";
             }
             else
             {
@@ -218,14 +218,51 @@ public class Shop : MonoBehaviour
 
     }
 
-    public void BuyEpicSword()
+    public void BuySpeedShoes()
     {
-        if (30 <= Shards)
+        if (150 <= Shards)
         {
             print(Shards);
-            Shards = Shards - 30;
+            Shards = Shards - 150;
             DDoL.GetComponent<DontDestroyShardCounter>().Shards = Shards;
-            DDoL.GetComponent<ItemsBoughtInShop>().SwordMultiplier = 2;
+            DDoL.GetComponent<DontDestroyShardCounter>().SpeedShoes = true;
+        }
+    }
+    public void BuyHealthPotion()
+    {
+        if (10 <= Shards)
+        {
+            Shards = Shards - 10;
+            DDoL.GetComponent<DontDestroyShardCounter>().Shards = Shards;
+            DDoL.GetComponent<DontDestroyShardCounter>().HealthPots++;
+        }
+    }
+
+    public void BuySpeedPotion()
+    {
+        if (10 <= Shards)
+        {
+            Shards = Shards - 10;
+            DDoL.GetComponent<DontDestroyShardCounter>().Shards = Shards;
+            DDoL.GetComponent<DontDestroyShardCounter>().SpeedPots++;
+        }
+    }
+
+    public void BuyAttackPotion()
+    {
+        if (10 <= Shards)
+        {
+            Shards = Shards - 10;
+            DDoL.GetComponent<DontDestroyShardCounter>().Shards = Shards;
+        }
+    }
+
+    public void BuyTheEncylopedia()
+    {
+        if (100 <= Shards)
+        {
+            Shards = Shards - 100;
+            DDoL.GetComponent<DontDestroyShardCounter>().Shards = Shards;
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     [SerializeField] SpriteRenderer Forward;
     [SerializeField] SpriteRenderer Backwards;
     [SerializeField] SpriteRenderer Right;

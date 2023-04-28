@@ -25666,6 +25666,14 @@ PrefabInstance:
       propertyPath: DDoLPrefab
       value: 
       objectReference: {fileID: 6110241235665842700, guid: 721d296e439248d4d9f0cc35ad870e38, type: 3}
+    - target: {fileID: 1630603248941262679, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: SpeedPotions
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248941262679, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: HealthPotions
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
 --- !u!4 &1357424706720115891 stripped

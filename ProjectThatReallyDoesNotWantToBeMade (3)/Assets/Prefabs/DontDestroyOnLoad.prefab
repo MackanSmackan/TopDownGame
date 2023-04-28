@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6110241235665842703}
   - component: {fileID: 6110241235665842702}
-  - component: {fileID: 6110241235665842701}
   m_Layer: 0
   m_Name: DontDestroyOnLoad
   m_TagString: DontDestroyOnLoad
@@ -44,17 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c3efba37ff57541b4842413f3277e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthPots: 0
+  SpeedPots: 0
+  SpeedShoes: 0
+  TE: 0
   Shards: 0
---- !u!114 &6110241235665842701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6110241235665842700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af357858bda5ae4ab767249b91ea840, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SwordMultiplier: 1
