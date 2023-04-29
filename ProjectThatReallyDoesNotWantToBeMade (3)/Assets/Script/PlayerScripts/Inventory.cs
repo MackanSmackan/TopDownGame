@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] GameObject DDoLPrefab;
+    [SerializeField] Text HealthText;
+    [SerializeField] Text SpeedText;
     GameObject DDoL;
     public int Shards;
     public int HealthPotions;
@@ -21,7 +23,9 @@ public class Inventory : MonoBehaviour
             DDoL = GameObject.FindGameObjectWithTag("DontDestroyOnLoad");
             Shards = DDoL.GetComponent<DontDestroyShardCounter>().Shards;
             HealthPotions = DDoL.GetComponent<DontDestroyShardCounter>().HealthPots;
+            HealthText.text = "Health potions: " + HealthPotions;
             SpeedPotions = DDoL.GetComponent<DontDestroyShardCounter>().SpeedPots;
+            SpeedText.text = "Speed potions: " + SpeedPotions;
             SpeedShoes = DDoL.GetComponent<DontDestroyShardCounter>().SpeedShoes;
             TE = DDoL.GetComponent<DontDestroyShardCounter>().TE;
 
@@ -50,6 +54,7 @@ public class Inventory : MonoBehaviour
         {
             this.GetComponent<Health>().health++;
             HealthPotions--;
+            HealthText.text = "Health potions: " + HealthPotions;
             DDoL.GetComponent<DontDestroyShardCounter>().HealthPots--;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && SpeedPotions >= 0)
@@ -63,6 +68,7 @@ public class Inventory : MonoBehaviour
         this.GetComponent<Movement>().moveSpeed++;       
         DDoL.GetComponent<DontDestroyShardCounter>().SpeedPots--;
         SpeedPotions--;
+        SpeedText.text = "Speed potions: " + SpeedPotions;
         yield return new WaitForSeconds(300);
         this.GetComponent<Movement>().moveSpeed--;
 
