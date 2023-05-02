@@ -64,7 +64,6 @@ public class GoblinFollowPlayer : MonoBehaviour
                 Left.enabled = false;
                 Right.enabled = false;
             }
-
         }
         else
         {
@@ -94,7 +93,9 @@ public class GoblinFollowPlayer : MonoBehaviour
         }
         else
         {
+            
             CurrentStep = 0;
+            StartCoroutine(Attack());
         }
 
         rb.velocity = (TargetPos - this.transform.position).normalized * speed;
@@ -119,6 +120,18 @@ public class GoblinFollowPlayer : MonoBehaviour
         CurrentStep += Time.deltaTime;
     }
 
+    public void Die()
+    {
+        Destroy(this.gameObject);
+    }
+
+    IEnumerator Attack()
+    {
+        float oldRad = Radius;
+        Radius = 1.8f;
+        yield return new WaitForSeconds(2);
+        Radius = oldRad;
+    }
     private void OnDrawGizmos()
     {
         Gizmos.DrawCube(TargetPos, new Vector3(0.5f, 0.5f, 1));

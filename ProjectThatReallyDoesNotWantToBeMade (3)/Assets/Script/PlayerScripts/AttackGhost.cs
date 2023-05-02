@@ -59,6 +59,10 @@ public class AttackGhost : MonoBehaviour
                 Vector2 dir = collision.transform.position - this.transform.parent.parent.parent.position;
                 dir.Normalize();
                 collision.GetComponent<Rigidbody2D>().velocity = dir * strength;
+                if (collision.gameObject.GetComponent<GoblinFollowPlayer>().Health <= 0)
+                {
+                    collision.gameObject.GetComponent<GoblinFollowPlayer>().Die();
+                }
             }
         }
     }

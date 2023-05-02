@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] GameObject[] Enemies;
+    [SerializeField] GameObject[] Goblins;
 
     public void StartAttack()
     {
@@ -16,6 +17,14 @@ public class EnemyController : MonoBehaviour
                 Enemy.GetComponent<FollowPlayer>().enabled = true;
             }
         }
+
+        foreach (GameObject goblin in Goblins)
+        {
+            if (goblin != null)
+            {
+                goblin.GetComponent<GoblinFollowPlayer>().enabled = true;
+            }
+        }
     }
     public void EndAttack()
     {
@@ -25,6 +34,14 @@ public class EnemyController : MonoBehaviour
                 {
                     Enemy.GetComponent<FollowPlayer>().enabled = false;
                     Enemy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                }
+            }
+            foreach (GameObject goblin in Goblins)
+            {
+                if (goblin != null)
+                {
+                    goblin.GetComponent<GoblinFollowPlayer>().enabled = false;
+                    goblin.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 }
             }
     }

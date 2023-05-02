@@ -50,14 +50,14 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1) && HealthPotions >= 0)
+        if(Input.GetKeyDown(KeyCode.Alpha1) && HealthPotions > 0)
         {
             this.GetComponent<Health>().health++;
             HealthPotions--;
             HealthText.text = "Health potions: " + HealthPotions;
             DDoL.GetComponent<DontDestroyShardCounter>().HealthPots--;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && SpeedPotions >= 0)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && SpeedPotions > 0)
         {
             StartCoroutine(Speed());
         }
