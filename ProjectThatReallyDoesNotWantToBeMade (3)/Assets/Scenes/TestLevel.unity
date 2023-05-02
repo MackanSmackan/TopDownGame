@@ -26075,6 +26075,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Largo Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 8260407865282036086, guid: 454937ae17123764eb95c5b4f35a5014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8260407866445124343, guid: 454937ae17123764eb95c5b4f35a5014, type: 3}
       propertyPath: m_Mesh
       value: 
