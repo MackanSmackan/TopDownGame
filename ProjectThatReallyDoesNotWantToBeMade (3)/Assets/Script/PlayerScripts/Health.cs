@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Movement movement;
     [SerializeField] GameObject DeathScreen;
+    [SerializeField] AudioClip sadDeathMusicForDyin;
     bool Died;
     public Image[] hearts;
     public bool IsAttacking;

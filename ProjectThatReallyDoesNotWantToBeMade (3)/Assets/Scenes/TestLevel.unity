@@ -25653,6 +25653,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 321896974302153112, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 321896974678850228, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1117.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 321896974678850228, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 194.2869
+      objectReference: {fileID: 0}
+    - target: {fileID: 321896974678850228, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 321896974678850228, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 321896974678850229, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_Text
+      value: Your soul wanders the Wizards Domain for all eternity...
+      objectReference: {fileID: 0}
+    - target: {fileID: 321896975069481903, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_Text
+      value: You are dead
+      objectReference: {fileID: 0}
     - target: {fileID: 1357424706613534595, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -25985,6 +26013,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.015596643
       objectReference: {fileID: 0}
+    - target: {fileID: 1630603248248131954, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999972
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248248131954, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0023628313
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248248131954, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.271
+      objectReference: {fileID: 0}
     - target: {fileID: 1630603248248131955, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -25996,6 +26036,34 @@ PrefabInstance:
     - target: {fileID: 1630603248301370721, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248366605688, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.65195364
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248366605688, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.10482553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248366605688, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99945694
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248366605688, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248366605688, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248366605688, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.032952234
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603248366605688, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630603248366605689, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_TagString
