@@ -17,7 +17,6 @@ public class AttackGhost : MonoBehaviour
         col.GetComponent<Animator>().SetTrigger("Died");
         yield return new WaitForSeconds(1f);
         int RN = Random.Range(-1, 2);
-        print(RN);
         if (RN <= 0)
         {
             Instantiate(Shard, col.transform.position, col.transform.rotation);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    [SerializeField] Transform Player;
     [SerializeField] SpriteRenderer Forward;
     [SerializeField] SpriteRenderer Backwards;
     [SerializeField] SpriteRenderer Right;
@@ -23,6 +24,12 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        Vector3 MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        MousePos = new Vector3(MousePos.x, MousePos.y, 1);
+        float xDir;
+        float yDir;
+        xDir = Mathf.Abs(MousePos.x - Player.position.x);
+        yDir = Mathf.Abs(MousePos.y - Player.position.y);
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         if (Input.GetMouseButtonDown(0))
@@ -30,41 +37,47 @@ public class Movement : MonoBehaviour
             StartCoroutine(Attacking());
         }
 
-        if (movement.x == -1f)
+        if (xDir > yDir)
         {
-            Walking = true;
-            Right.enabled = true;
-            Left.enabled = false;
-            Forward.enabled = false;
-            Backwards.enabled = false;
+            if (MousePos.x - Player.position.x < 0)
+            {
+                Right.enabled = true;
+                Left.enabled = false;
+                Forward.enabled = false;
+                Backwards.enabled = false;
+            }
+            else
+            {
+                Left.enabled = true;
+                Right.enabled = false;
+                Forward.enabled = false;
+                Backwards.enabled = false;
+            }
         }
-        if (movement.x == 1f)
+        else
         {
-            Walking = true;
-            Left.enabled = true;
-            Right.enabled = false;
-            Forward.enabled = false;
-            Backwards.enabled = false;
-        }
-        if (movement.y == -1f)
-        {
-            Walking = true;
-            Right.enabled = false;
-            Left.enabled = false;
-            Forward.enabled = true;
-            Backwards.enabled = false;
-        }
-        if (movement.y == 1f)
-        {
-            Walking = true;
-            Right.enabled = false;
-            Left.enabled = false;
-            Forward.enabled = false;
-            Backwards.enabled = true;
+            if (MousePos.y - Player.position.y > 0)
+            {
+                Right.enabled = false;
+                Left.enabled = false;
+                Forward.enabled = false;
+                Backwards.enabled = true;
+            }
+            else
+            {
+                Right.enabled = false;
+                Left.enabled = false;
+                Forward.enabled = true;
+                Backwards.enabled = false;
+            }
         }
         if (movement.x == 0 && movement.y == 0)
         {
             Walking = false;
+        }
+        else
+        {
+            Walking = true;
         }
 
         Forwardanimator.SetBool("Walking", Walking);
