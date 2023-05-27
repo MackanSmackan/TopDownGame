@@ -14,6 +14,10 @@ public class Movement : MonoBehaviour
     [SerializeField] Animator Forwardanimator;
     [SerializeField] Animator Rightanimator;
     [SerializeField] Animator Backanimator;
+    [SerializeField] TrailRenderer ForwardTR;
+    [SerializeField] TrailRenderer BackwardsTR;
+    [SerializeField] TrailRenderer RightTR;
+    [SerializeField] TrailRenderer LeftTR;
     bool Walking;
     public bool attacking;
 
@@ -32,7 +36,7 @@ public class Movement : MonoBehaviour
         yDir = Mathf.Abs(MousePos.y - Player.position.y);
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !attacking)
         {
             StartCoroutine(Attacking());
         }
@@ -95,14 +99,36 @@ public class Movement : MonoBehaviour
 
     IEnumerator Attacking()
     {
+        if (Forward.enabled == true)
+        {
+            ForwardTR.enabled = true;
+        }
+        if (Backwards.enabled == true)
+        {
+            BackwardsTR.enabled = true;
+        }
+        if (Right.enabled == true)
+        {
+            LeftTR.enabled = true;
+        }
+        if (Left.enabled == true)
+        {
+            RightTR.enabled = true;
+        }
         attacking = true;
         Walking = false;
         Forwardanimator.SetTrigger("Attack");
         Backanimator.SetTrigger("Attack");
         Leftanimator.SetTrigger("Attack");
         Rightanimator.SetTrigger("Attack");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
         attacking = false;
-        Walking = true;
+        Walking = true; 
+        yield return new WaitForSeconds(0.2f);
+        ForwardTR.enabled = false;
+        BackwardsTR.enabled = false;
+        LeftTR.enabled = false;
+        RightTR.enabled = false;
+
     }
 }

@@ -10,9 +10,11 @@ public class AttackGhost : MonoBehaviour
     [SerializeField] Movement movScript;
     [SerializeField] GameObject Shard;
     [SerializeField] GameObject Heart;
+    [SerializeField] Animator Cam;
     float strength = 2;
     IEnumerator Died(GameObject col)
     {
+        Cam.Play("CameraShake");
         col.gameObject.GetComponent<FollowPlayer>().enabled = false;
         col.GetComponent<Animator>().SetTrigger("Died");
         yield return new WaitForSeconds(1f);
