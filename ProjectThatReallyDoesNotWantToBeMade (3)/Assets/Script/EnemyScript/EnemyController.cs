@@ -6,14 +6,15 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] GameObject[] Enemies;
     [SerializeField] GameObject[] Goblins;
+    [SerializeField] MusicScript musScript;
 
     public void StartAttack()
     {
-
         foreach (GameObject Enemy in Enemies)
         {
             if (Enemy != null)
             {
+                musScript.AddEnemy();
                 Enemy.GetComponent<FollowPlayer>().enabled = true;
             }
         }
@@ -22,27 +23,30 @@ public class EnemyController : MonoBehaviour
         {
             if (goblin != null)
             {
+                musScript.AddEnemy();
                 goblin.GetComponent<GoblinFollowPlayer>().enabled = true;
             }
         }
     }
     public void EndAttack()
     {
-            foreach (GameObject Enemy in Enemies)
+        foreach (GameObject Enemy in Enemies)
+        {
+            if (Enemy != null)
             {
-                if (Enemy != null)
-                {
-                    Enemy.GetComponent<FollowPlayer>().enabled = false;
-                    Enemy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                }
+                musScript.RemoveEnemy();
+                Enemy.GetComponent<FollowPlayer>().enabled = false;
+                Enemy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
-            foreach (GameObject goblin in Goblins)
+        }
+        foreach (GameObject goblin in Goblins)
+        {
+            if (goblin != null)
             {
-                if (goblin != null)
-                {
-                    goblin.GetComponent<GoblinFollowPlayer>().enabled = false;
-                    goblin.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                }
+                musScript.RemoveEnemy();
+                goblin.GetComponent<GoblinFollowPlayer>().enabled = false;
+                goblin.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
+        }
     }
 }
