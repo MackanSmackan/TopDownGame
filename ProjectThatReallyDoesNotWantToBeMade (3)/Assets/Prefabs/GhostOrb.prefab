@@ -86,8 +86,7 @@ GameObject:
   - component: {fileID: 4048622120866953342}
   - component: {fileID: 4048622120866953343}
   - component: {fileID: 4048622120866953328}
-  - component: {fileID: 4048622120866953329}
-  - component: {fileID: 1441186546}
+  - component: {fileID: 6719993891119288570}
   m_Layer: 0
   m_Name: GhostOrb
   m_TagString: Untagged
@@ -103,7 +102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4048622120866953330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.87, y: -7.91, z: 0}
+  m_LocalPosition: {x: -6.4357066, y: -2.177289, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 4048622119630600355}
@@ -217,7 +216,7 @@ CircleCollider2D:
   m_Offset: {x: -0.029323101, y: 0}
   serializedVersion: 2
   m_Radius: 0.47
---- !u!114 &4048622120866953329
+--- !u!114 &6719993891119288570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,27 +225,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 4048622120866953330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e82c904d664c02a49a69f773458cf98a, type: 3}
+  m_Script: {fileID: 11500000, guid: b92df58da67c84d488b856b14e2d4dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ghost: {fileID: 4048622120866953330}
+  target: {fileID: 0}
+  Loot1: {fileID: 1982385774723815601, guid: eef76f275a7b9b24cb298dee0e6bb1c7, type: 3}
+  Loot2: {fileID: 286487301180547199, guid: 07de95103b6c40c4ca73b8c8e27bc005, type: 3}
+  Cam: {fileID: 0}
+  rb: {fileID: 4048622120866953343}
+  Health: 10
+  Damage: 1
+  Speed: 2
+  enemyType: 1
+  LoungeSpeed: 4
+  LoungeDistance: 1.8
+  LoungePower: 10
+  BaseSpeed: 2
   Animator: {fileID: 4048622120866953342}
-  speed: 1.75
-  Targetposition: {fileID: 1357424707156958436, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
-  GhostHealth: 10
---- !u!58 &1441186546
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4048622120866953330}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.029323101, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5604298
+  spinDirection: 0
+  Radius: 0
+  CircleSpeed: 0
+  animatorD: {fileID: 0}
+  AnimatorR: {fileID: 0}
+  animatorU: {fileID: 0}
+  AnimatorL: {fileID: 0}
+  Up: {fileID: 0}
+  Down: {fileID: 0}
+  Left: {fileID: 0}
+  Right: {fileID: 0}

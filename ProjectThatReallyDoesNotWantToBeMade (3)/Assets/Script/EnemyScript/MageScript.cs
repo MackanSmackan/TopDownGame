@@ -69,22 +69,9 @@ public class MageScript : MonoBehaviour
 
     IEnumerator SpawnGhosts()
     {
-        invis = true;
-        Vector3 Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
-        GameObject enemy1 = Instantiate(Enemy, Randompoint, this.transform.rotation);
-        enemy1.GetComponent<FollowPlayer>().Targetposition = player;
-        yield return new WaitForSeconds(0.5f);
-
-        Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
-        GameObject enemy2 = Instantiate(Enemy, Randompoint, this.transform.rotation);
-        enemy2.GetComponent<FollowPlayer>().Targetposition = player;
-        yield return new WaitForSeconds(0.5f);
-
-        Randompoint = new Vector3(Random.Range(MinPos.position.x, MaxPos.position.x), 0, Random.Range(MinPos.position.y, MaxPos.position.y));
-        GameObject enemy3 = Instantiate(Enemy, Randompoint, this.transform.rotation);
-        enemy3.GetComponent<FollowPlayer>().Targetposition = player;
-        yield return new WaitForSeconds(5f);
-        invis = false;
+        print("Spawn ghosts or someting");
+        yield return new WaitForSeconds(2);
+        print("FIX IT");
     }
 
     void SpawnTotem()

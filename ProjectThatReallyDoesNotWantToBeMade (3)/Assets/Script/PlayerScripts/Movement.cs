@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     [SerializeField] TrailRenderer BackwardsTR;
     [SerializeField] TrailRenderer RightTR;
     [SerializeField] TrailRenderer LeftTR;
+    [SerializeField] float AttackJump;
     bool Walking;
     public bool attacking;
 
