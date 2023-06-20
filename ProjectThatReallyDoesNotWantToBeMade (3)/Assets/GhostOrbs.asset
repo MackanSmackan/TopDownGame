@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1814b7cd2f8724080a31dbbf4d64ac, type: 3}
   m_Name: GhostOrbs
   m_EditorClassIdentifier: 
-  LoungeSpeed: 0
-  LoungeDistance: 0
-  LoungePower: 0
-  BaseSpeed: 0
+  Health: 5
+  Damage: 1
+  Speed: 2
+  LoungeSpeed: 4
+  LoungeDistance: 3
+  LoungePower: 10
+  BaseSpeed: 1
+  Radius: 0
+  CircleSpeed: 0

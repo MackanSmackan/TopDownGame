@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1814b7cd2f8724080a31dbbf4d64ac, type: 3}
   m_Name: Goblins
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  Health: 0
-  Damage: 0
-  Speed: 0
+  Health: 10
+  Damage: 2
+  Speed: 5
   LoungeSpeed: 0
   LoungeDistance: 0
   LoungePower: 0
   BaseSpeed: 0
-  spinDirection: 0
-  Radius: 0
-  CircleSpeed: 0
+  Radius: 4
+  CircleSpeed: 4

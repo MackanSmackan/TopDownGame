@@ -10,23 +10,42 @@ public class Attack : MonoBehaviour
     [SerializeField] Movement movScript;
     [SerializeField] GameObject Shard;
     [SerializeField] GameObject Heart;
-    float strength = 2;
-
+    [SerializeField] float strength = 2;
+    [SerializeField] SpriteRenderer Up;
+    [SerializeField] SpriteRenderer Down;
+    [SerializeField] SpriteRenderer Left;
+    [SerializeField] SpriteRenderer Right;
 
     private void OnTriggerEnter2D(Collider2D collision)
     { 
         if (collision.gameObject.GetComponent<CompleteEnemyMovement>() != null && movScript.attacking)
         {
             collision.gameObject.GetComponent<CompleteEnemyMovement>().TakeDamage(AttackPower);
-            DisableMove(collision.gameObject);
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce((collision.transform.position - this.transform.position).normalized * strength);
+            StartCoroutine(DisableMove(collision.gameObject));
         }
     }
 
     IEnumerator DisableMove(GameObject col)
     {
         col.GetComponent<CompleteEnemyMovement>().enabled = false;
-        yield return new WaitForSeconds(0.5f);
+        col.gameObject.GetComponent<CompleteEnemyMovement>().rb.velocity = Vector2.zero;
+        if(Up.enabled)
+        {
+            col.gameObject.GetComponent<CompleteEnemyMovement>().rb.AddForce(Vector2.up * strength);
+        }
+        else if (Right.enabled)
+        {
+            col.gameObject.GetComponent<CompleteEnemyMovement>().rb.AddForce(Vector2.right * strength);
+        }
+        else if (Down.enabled)
+        {
+            col.gameObject.GetComponent<CompleteEnemyMovement>().rb.AddForce(Vector2.down * strength);
+        }
+        else
+        {
+            col.gameObject.GetComponent<CompleteEnemyMovement>().rb.AddForce(Vector2.left * strength);
+        }
+        yield return new WaitForSeconds(1f);
         col.GetComponent<CompleteEnemyMovement>().enabled = true;
     }
 }

@@ -15,10 +15,11 @@ public class CompleteEnemyMovement : MonoBehaviour
 
     [Header("Variables")]
     [SerializeField] Animator Cam;
-    [SerializeField] Rigidbody2D rb;
+    public Rigidbody2D rb;
     public int Health;
-    public int Damage;
-    public float Speed;
+    int Damage;
+    float Speed;
+    public bool Damaged;
 
 
 
@@ -242,7 +243,6 @@ public class CompleteEnemyMovement : MonoBehaviour
 
     IEnumerator GoblinAttack()
     {
-
         float oldRad = Radius;
         Radius = 0f;
         yield return new WaitForSeconds(1f);
