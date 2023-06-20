@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CompleteEnemyMovement : MonoBehaviour
 {
+    public EnemyObject Values;
+    enum Enemytype { Goblin, GhostOrb };
     [Header("Team")]
     public Transform target;
 
@@ -17,29 +19,26 @@ public class CompleteEnemyMovement : MonoBehaviour
     public int Health;
     public int Damage;
     public float Speed;
-    bool Damaged;
 
 
-    enum Enemytype { Goblin, GhostOrb };
+
     [Header("Enemy type")]
     [SerializeField] Enemytype enemyType;
 
 
-
     [Header("Ghost orb only")]
-    [SerializeField] float LoungeSpeed;
-    [SerializeField] float LoungeDistance;
-    [SerializeField] float LoungePower;
-    [SerializeField] float BaseSpeed;
     [SerializeField] Animator Animator;
+    float LoungeSpeed;
+    float LoungeDistance;
+    float BaseSpeed;
     Vector2 dir;
     bool CanTurnLeft = false;
     bool CanTurnRight = true;
 
     [Header("Goblin only")]
     [SerializeField] bool spinDirection;
-    [SerializeField] float Radius;
-    [SerializeField] float CircleSpeed;
+    float Radius;
+    float CircleSpeed;
     float CurrentStep;
 
     Vector3 CirclePos;
@@ -55,6 +54,19 @@ public class CompleteEnemyMovement : MonoBehaviour
     [SerializeField] SpriteRenderer Left;
     [SerializeField] SpriteRenderer Right;
 
+    private void Start()
+    {
+        LoungeSpeed = Values.LoungeSpeed;
+        LoungeDistance = Values.LoungeDistance;
+        BaseSpeed = Values.BaseSpeed;
+
+        Radius = Values.Radius;
+        CircleSpeed = Values.CircleSpeed;
+
+        Speed = Values.Speed;
+        Damage = Values.Damage;
+        Health = Values.Health;
+    }
     private void FixedUpdate()
     {
         // Goblin
@@ -107,15 +119,14 @@ public class CompleteEnemyMovement : MonoBehaviour
             }
 
 
-            if (CircleSpeed >= CurrentStep)
+            if (CircleSpeed >= CurrentStep && CurrentStep != 180)
             {
                 DrawCircle();
             }
             else
             {
-
                 CurrentStep = 0;
-                StartCoroutine(goblinAttack());
+                StartCoroutine(GoblinAttack());
             }
 
             rb.velocity = (CirclePos - this.transform.position).normalized * Speed;
@@ -179,8 +190,31 @@ public class CompleteEnemyMovement : MonoBehaviour
     {
         if (enemyType == Enemytype.GhostOrb)
         {
-            if (collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<Movement>().attacking == false)
+            if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<Movement>().attacking == false)
             {
+                collision.gameObject.GetComponent<Health>().health -= Damage;
+            }
+        }
+        if (enemyType == Enemytype.Goblin)
+        {
+            if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<Movement>().attacking == false)
+            {
+                if (Up.enabled == true)
+                {
+                    animatorU.SetTrigger("AttackBack");
+                }
+                else if (Right.enabled == true)
+                {
+                    AnimatorR.SetTrigger("AttackRight");
+                }
+                else if (Down.enabled == true)
+                {
+                    animatorD.SetTrigger("AttackForward");
+                }
+                else
+                {
+                    AnimatorL.SetTrigger("AttackLeft");
+                }
                 collision.gameObject.GetComponent<Health>().health -= Damage;
             }
         }
@@ -206,11 +240,12 @@ public class CompleteEnemyMovement : MonoBehaviour
         CurrentStep += Time.deltaTime;
     }
 
-    IEnumerator goblinAttack()
+    IEnumerator GoblinAttack()
     {
+
         float oldRad = Radius;
-        Radius = 1.8f;
-        yield return new WaitForSeconds(1);
+        Radius = 0f;
+        yield return new WaitForSeconds(1f);
         Radius = oldRad;
     }
 }
