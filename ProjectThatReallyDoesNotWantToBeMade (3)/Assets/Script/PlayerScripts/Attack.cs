@@ -20,32 +20,47 @@ public class Attack : MonoBehaviour
     { 
         if (collision.gameObject.GetComponent<CompleteEnemyMovement>() != null && movScript.attacking)
         {
+            Vector2 dir = collision.transform.position - this.transform.parent.parent.parent.position;
+            dir.Normalize();
             collision.gameObject.GetComponent<CompleteEnemyMovement>().TakeDamage(AttackPower);
             StartCoroutine(DisableMove(collision.gameObject));
+            collision.gameObject.GetComponent<CompleteEnemyMovement>().rb.velocity = dir * AttackPower;
         }
     }
 
     IEnumerator DisableMove(GameObject col)
     {
-        col.GetComponent<CompleteEnemyMovement>().enabled = false;
-        col.gameObject.GetComponent<CompleteEnemyMovement>().rb.velocity = Vector2.zero;
-        if(Up.enabled)
+
+
+        if (col.GetComponent<CompleteEnemyMovement>().Animator != null)
         {
-            col.gameObject.GetComponent<CompleteEnemyMovement>().rb.AddForce(Vector2.up * strength);
-        }
-        else if (Right.enabled)
-        {
-            col.gameObject.GetComponent<CompleteEnemyMovement>().rb.AddForce(Vector2.right * strength);
-        }
-        else if (Down.enabled)
-        {
-            col.gameObject.GetComponent<CompleteEnemyMovement>().rb.AddForce(Vector2.down * strength);
+            col.GetComponent<CompleteEnemyMovement>().Animator.enabled = false;
         }
         else
         {
-            col.gameObject.GetComponent<CompleteEnemyMovement>().rb.AddForce(Vector2.left * strength);
+            col.GetComponent<CompleteEnemyMovement>().animatorD.enabled = false;
+            col.GetComponent<CompleteEnemyMovement>().AnimatorR.enabled = false;
+            col.GetComponent<CompleteEnemyMovement>().animatorU.enabled = false;
+            col.GetComponent<CompleteEnemyMovement>().AnimatorL.enabled = false;
         }
-        yield return new WaitForSeconds(1f);
-        col.GetComponent<CompleteEnemyMovement>().enabled = true;
+
+        col.GetComponent<CompleteEnemyMovement>().enabled = false;
+        col.gameObject.GetComponent<CompleteEnemyMovement>().rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(0.5f);
+        if (col != null)
+        {
+            col.GetComponent<CompleteEnemyMovement>().enabled = true;
+            if (col.GetComponent<CompleteEnemyMovement>().Animator != null)
+            {
+                col.GetComponent<CompleteEnemyMovement>().Animator.enabled = true;
+            }
+            else
+            {
+                col.GetComponent<CompleteEnemyMovement>().animatorD.enabled = true;
+                col.GetComponent<CompleteEnemyMovement>().AnimatorR.enabled = true;
+                col.GetComponent<CompleteEnemyMovement>().animatorU.enabled = true;
+                col.GetComponent<CompleteEnemyMovement>().AnimatorL.enabled = true;
+            }
+        }
     }
 }

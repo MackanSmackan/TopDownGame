@@ -18,6 +18,6 @@ MonoBehaviour:
   LoungeSpeed: 4
   LoungeDistance: 3
   LoungePower: 10
-  BaseSpeed: 1
+  BaseSpeed: 2
   Radius: 0
   CircleSpeed: 0

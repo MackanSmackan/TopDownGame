@@ -342,6 +342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2844599157408622003, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2844599157408622012, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: Cam
       value: 
@@ -586,6 +590,10 @@ PrefabInstance:
     - target: {fileID: 357068286727849367, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: m_Name
       value: Goblin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844599157408622003, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2844599157408622012, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: Cam
@@ -1373,6 +1381,10 @@ PrefabInstance:
     - target: {fileID: 357068286727849367, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: m_Name
       value: Goblin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844599157408622003, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2844599157408622012, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: Cam
@@ -7985,6 +7997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2844599157408622003, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2844599157408622012, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: Cam
       value: 
@@ -8341,6 +8357,10 @@ PrefabInstance:
     - target: {fileID: 357068286727849367, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: m_Name
       value: Goblin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844599157408622003, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2844599157408622012, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: Cam
@@ -8794,6 +8814,10 @@ PrefabInstance:
     - target: {fileID: 357068286727849367, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: m_Name
       value: Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844599157408622003, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2844599157408622012, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: Cam
@@ -9379,6 +9403,10 @@ PrefabInstance:
     - target: {fileID: 357068286727849367, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: m_Name
       value: Goblin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844599157408622003, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2844599157408622012, guid: 9c8044383b9b38a47923a7fed6e2e5b0, type: 3}
       propertyPath: Cam
@@ -23934,6 +23962,14 @@ PrefabInstance:
       propertyPath: AttackJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1630603246973049647, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630603246973049647, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1630603247494694475, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: Cam
       value: 
@@ -23946,6 +23982,14 @@ PrefabInstance:
       propertyPath: Cam
       value: 
       objectReference: {fileID: 1028854854}
+    - target: {fileID: 3279839332018950297, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279839332018950297, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3279839332018950299, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: Up
       value: 
@@ -23974,6 +24018,14 @@ PrefabInstance:
       propertyPath: AttackJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3279839332113711067, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279839332113711067, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3279839332113711069, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: Up
       value: 
@@ -24001,6 +24053,14 @@ PrefabInstance:
     - target: {fileID: 3279839332113711069, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: AttackJump
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279839332627618269, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279839332627618269, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3279839332627618271, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: Up

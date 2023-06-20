@@ -28,7 +28,7 @@ public class CompleteEnemyMovement : MonoBehaviour
 
 
     [Header("Ghost orb only")]
-    [SerializeField] Animator Animator;
+    public Animator Animator;
     float LoungeSpeed;
     float LoungeDistance;
     float BaseSpeed;
@@ -45,10 +45,10 @@ public class CompleteEnemyMovement : MonoBehaviour
     Vector3 CirclePos;
 
 
-    [SerializeField] Animator animatorD;
-    [SerializeField] Animator AnimatorR;
-    [SerializeField] Animator animatorU;
-    [SerializeField] Animator AnimatorL;
+    public Animator animatorD;
+    public Animator AnimatorR;
+    public Animator animatorU;
+    public Animator AnimatorL;
 
     [SerializeField] SpriteRenderer Up;
     [SerializeField] SpriteRenderer Down;
