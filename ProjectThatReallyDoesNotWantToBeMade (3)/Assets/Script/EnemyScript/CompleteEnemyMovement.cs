@@ -202,7 +202,7 @@ public class CompleteEnemyMovement : MonoBehaviour
             {
                 if (Up.enabled == true)
                 {
-                    animatorU.SetTrigger("AttackBack");
+                    animatorU.SetTrigger("AttackBackward");
                 }
                 else if (Right.enabled == true)
                 {

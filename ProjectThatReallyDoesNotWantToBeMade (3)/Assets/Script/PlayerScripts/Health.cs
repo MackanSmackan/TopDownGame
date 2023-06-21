@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Movement movement;
     [SerializeField] GameObject DeathScreen;
-    [SerializeField] AudioClip sadDeathMusicForDyin;
+    [SerializeField] AudioSource DeathMusicn;
     bool Died;
     public Image[] hearts;
     public bool IsAttacking;
@@ -67,6 +67,7 @@ public class Health : MonoBehaviour
         movement.enabled = false;
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(1.5f);
+        DeathMusicn.Play();
         DeathScreen.active = true;
     }
 }
