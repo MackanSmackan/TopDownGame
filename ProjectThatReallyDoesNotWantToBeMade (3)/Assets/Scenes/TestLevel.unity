@@ -7162,6 +7162,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5988009082965939800, guid: 116fa3a6d18788b478667184a689fb5d, type: 3}
   m_PrefabInstance: {fileID: 844207152}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &845173410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 845173412}
+  - component: {fileID: 845173411}
+  m_Layer: 0
+  m_Name: Base
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &845173411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845173410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccf3e2b42e53a445b33672c2416c213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemies: []
+--- !u!4 &845173412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845173410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.974782, y: -1.0347435, z: -3730.5112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &862179530
 GameObject:
   m_ObjectHideFlags: 0
@@ -9243,6 +9287,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5988009082965939800, guid: 116fa3a6d18788b478667184a689fb5d, type: 3}
   m_PrefabInstance: {fileID: 1648674895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1701056479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1357424707156958437, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+  m_PrefabInstance: {fileID: 321896974776912872}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2732c5e2552a540bc500a71696e65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1708568343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6804570456674567835, guid: f207dad396483a049a26a5c174cf8753, type: 3}
@@ -23881,7 +23936,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f75c002ba9fdbdd488d8a76d1ae57149, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7bd7afd4b99862e4aac9c52920d9f46f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -24298,6 +24353,10 @@ PrefabInstance:
       propertyPath: AttackJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1630603246973049645, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: followScript
+      value: 
+      objectReference: {fileID: 1701056479}
     - target: {fileID: 1630603246973049647, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -24370,6 +24429,10 @@ PrefabInstance:
       propertyPath: AttackJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3279839332018950299, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: followScript
+      value: 
+      objectReference: {fileID: 1701056479}
     - target: {fileID: 3279839332113711067, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -24414,6 +24477,10 @@ PrefabInstance:
       propertyPath: AttackJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3279839332113711069, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: followScript
+      value: 
+      objectReference: {fileID: 1701056479}
     - target: {fileID: 3279839332246550815, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5589867
@@ -24478,6 +24545,10 @@ PrefabInstance:
       propertyPath: AttackJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3279839332627618271, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
+      propertyPath: followScript
+      value: 
+      objectReference: {fileID: 1701056479}
     - target: {fileID: 4261889025729269802, guid: 15d8b6900faaf7a4f99ed662715a1972, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.502

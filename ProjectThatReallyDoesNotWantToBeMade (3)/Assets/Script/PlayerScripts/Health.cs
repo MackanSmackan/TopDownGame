@@ -68,6 +68,16 @@ public class Health : MonoBehaviour
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(1.5f);
         DeathMusicn.Play();
+        StartCoroutine(fadeIn());
         DeathScreen.active = true;
+    }
+
+    IEnumerator fadeIn()
+    {
+        for(float t = 0; t < 1; t += Time.deltaTime * 0.5f)
+        {
+            DeathMusicn.volume = t;
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }
