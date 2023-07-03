@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CompleteEnemyMovement : MonoBehaviour
 {
-    public EnemyObject Values;
+    public EnemyObject ValuesGoblin;
+    public EnemyObject ValuesGhost;
     enum Enemytype { Goblin, GhostOrb };
+
     [Header("Team")]
     public Transform target;
 
@@ -57,16 +59,25 @@ public class CompleteEnemyMovement : MonoBehaviour
 
     private void Start()
     {
-        LoungeSpeed = Values.LoungeSpeed;
-        LoungeDistance = Values.LoungeDistance;
-        BaseSpeed = Values.BaseSpeed;
+        LoungeSpeed = ValuesGhost.LoungeSpeed;
+        LoungeDistance = ValuesGhost.LoungeDistance;
+        BaseSpeed = ValuesGhost.BaseSpeed;
 
-        Radius = Values.Radius;
-        CircleSpeed = Values.CircleSpeed;
+        Radius = ValuesGoblin.Radius;
+        CircleSpeed = ValuesGoblin.CircleSpeed;
 
-        Speed = Values.Speed;
-        Damage = Values.Damage;
-        Health = Values.Health;
+        if (enemyType == Enemytype.Goblin)
+        {
+            Speed = ValuesGoblin.Speed;
+            Damage = ValuesGoblin.Damage;
+            Health = ValuesGoblin.Health;
+        }
+        else if (enemyType == Enemytype.GhostOrb)
+        {
+            Speed = ValuesGhost.Speed;
+            Damage = ValuesGhost.Damage;
+            Health = ValuesGhost.Health;
+        }
     }
     private void FixedUpdate()
     {
