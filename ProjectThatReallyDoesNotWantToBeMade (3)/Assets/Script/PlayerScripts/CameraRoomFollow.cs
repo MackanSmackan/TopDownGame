@@ -5,9 +5,7 @@ using UnityEngine;
 public class CameraRoomFollow : MonoBehaviour
 {
     [SerializeField] GameObject Camera;
-    [SerializeField] GameObject StartRoom;
     [SerializeField] GameObject[] Rooms;
-    public GameObject PastRoom;
     public GameObject CurrentRoom;
     [SerializeField] float TD = 0.75f;
     bool Moving = false;
@@ -32,10 +30,6 @@ public class CameraRoomFollow : MonoBehaviour
             yield return 0;
         }
     }
-    private void Start()
-    {
-        CurrentRoom = StartRoom;
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -47,16 +41,6 @@ public class CameraRoomFollow : MonoBehaviour
                 if (!Moving)
                 {
                     StartCoroutine(SmoothTransition(Room));
-                    PastRoom = CurrentRoom;
-                    if (PastRoom.GetComponent<EnemyController>() != null)
-                    {
-                        PastRoom.GetComponent<EnemyController>().EndAttack();
-                    }
-                    if (Room.GetComponent<EnemyController>() != null)
-                    {
-                        CurrentRoom = Room;
-                        Room.GetComponent<EnemyController>().StartAttack();
-                    }
                 }
                 
             }

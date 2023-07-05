@@ -60,8 +60,10 @@ public class GhostOrbMovment : MonoBehaviour
             CanTurnRight = false;
         }
 
-
-        rb.velocity = dir * Speed;
+        if (!Pause)
+        {
+            rb.velocity = dir * Speed;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

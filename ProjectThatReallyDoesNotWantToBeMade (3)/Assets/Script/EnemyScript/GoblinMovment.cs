@@ -7,6 +7,7 @@ public class GoblinMovment : MonoBehaviour
     enum State { idle, angry};
 
     //Targeting
+    [Header("Detection")]
     Vector3 TargetPos;
     public Transform AngryAt;
     [SerializeField] State Currentstate;
@@ -117,8 +118,10 @@ public class GoblinMovment : MonoBehaviour
                 StartCoroutine(GoblinAttack());
             }
 
-
-            rb.velocity = (CirclePos - this.transform.position).normalized * Speed;
+            if (!Pause)
+            {
+                rb.velocity = (CirclePos - this.transform.position).normalized * Speed;
+            }
         }
         else if (Currentstate == State.idle)
         {

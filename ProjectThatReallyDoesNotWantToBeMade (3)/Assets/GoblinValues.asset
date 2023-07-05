@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 2
   Speed: 5
-  Health: 5
+  Health: 20
   Radius: 4
   CircleSpeed: 4
   SpinDirection: 1
