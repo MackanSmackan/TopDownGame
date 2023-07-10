@@ -1262,7 +1262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794cfe8cfcfbc5e4e9ffb9075bd301ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartScene: HubWorld
+  StartScene: TestLevel
 --- !u!1 &1970467234
 GameObject:
   m_ObjectHideFlags: 0
