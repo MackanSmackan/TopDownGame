@@ -8,10 +8,11 @@ public class GoblinMovment : MonoBehaviour
 
     //Targeting
     [Header("Detection")]
+    [SerializeField] Transform LookFor;
     Vector3 TargetPos;
     public Transform AngryAt;
     [SerializeField] State Currentstate;
-    LayerMask targetLayer;
+    [SerializeField] GameObject Alerted;
 
     [Header("Movement")]
     [SerializeField] GoblinObject values;
@@ -125,6 +126,8 @@ public class GoblinMovment : MonoBehaviour
         }
         else if (Currentstate == State.idle)
         {
+
+
             if (Vector2.Distance(this.transform.position, TargetPos) < 1)
             {
                 StartCoroutine(GetNewIdlePos());
@@ -182,9 +185,11 @@ public class GoblinMovment : MonoBehaviour
                     rb.velocity = (TargetPos - this.transform.position).normalized * Speed / 2;
                 }
             }
+
+            DetectPlayer();
         }
 
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -246,6 +251,17 @@ public class GoblinMovment : MonoBehaviour
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(2);
         Pause = false;
+    }
+
+    public void DetectPlayer()
+    {
+        if (Vector2.Dot((TargetPos - this.transform.position), (LookFor.transform.position - this.transform.position)) > -0f && Vector2.Distance(LookFor.position, this.transform.position) < 5)
+        {
+            AngryAt = LookFor;
+            Instantiate(Alerted, this.transform.position + new Vector3(-0.5f, 0.5f, 0), Quaternion.identity);
+            BecomeAware();
+        }
+        
     }
 
     public void BecomeAware()
