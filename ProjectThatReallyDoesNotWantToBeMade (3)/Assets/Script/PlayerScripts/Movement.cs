@@ -22,6 +22,8 @@ public class Movement : MonoBehaviour
     bool Walking;
     public bool attacking;
 
+    int CurrentAttack;
+
 
     [SerializeField] Rigidbody2D rb;
 
@@ -130,6 +132,5 @@ public class Movement : MonoBehaviour
         BackwardsTR.enabled = false;
         LeftTR.enabled = false;
         RightTR.enabled = false;
-
     }
 }
