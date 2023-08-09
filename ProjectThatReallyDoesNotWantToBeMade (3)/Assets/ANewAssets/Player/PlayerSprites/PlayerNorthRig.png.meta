@@ -145,9 +145,9 @@ TextureImporter:
       length: 8.562588
       parentId: 8
     - name: Feather
-      position: {x: 9.670539, y: 5.385998, z: 4}
-      rotation: {x: 0, y: 0, z: -0.016572898, w: 0.9998627}
-      length: 4.0850353
+      position: {x: 10.026565, y: 0.46334782, z: 4}
+      rotation: {x: 0, y: 0, z: -0.0072895503, w: 0.9999734}
+      length: 2.7301457
       parentId: 9
     - name: Sword
       position: {x: 20.42219, y: 11.424133, z: 10}
