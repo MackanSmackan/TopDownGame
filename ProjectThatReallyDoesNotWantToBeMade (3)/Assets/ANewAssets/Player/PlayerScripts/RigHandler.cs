@@ -55,19 +55,19 @@ public class RigHandler : MonoBehaviour
         WestRig.SetActive(false);
     }
 
-    public void SetRigAnimatorFloat(string ParameterName, float Value)
+    public void SetRigAnimatorInt(string ParameterName, int Value)
     {
-        NorthAnimator.SetFloat(ParameterName, Value);
-        SouthAnimator.SetFloat(ParameterName, Value);
-        EastAnimator.SetFloat(ParameterName, Value);
-        WestAnimator.SetFloat(ParameterName, Value);
+        NorthAnimator.SetInteger(ParameterName, Value);
+        SouthAnimator.SetInteger(ParameterName, Value);
+        EastAnimator.SetInteger(ParameterName, Value);
+        WestAnimator.SetInteger(ParameterName, Value);
     }
 
-    public void SetRigAnimatorTrigger(string ParameterName)
+    public void SetRigAnimatorBool(string ParameterName, bool Value)
     {
-        NorthAnimator.SetTrigger(ParameterName);
-        SouthAnimator.SetTrigger(ParameterName);
-        EastAnimator.SetTrigger(ParameterName);
-        WestAnimator.SetTrigger(ParameterName);
+        NorthAnimator.SetBool(ParameterName, Value);
+        SouthAnimator.SetBool(ParameterName, Value);
+        EastAnimator.SetBool(ParameterName, Value);
+        WestAnimator.SetBool(ParameterName, Value);
     }
 }
