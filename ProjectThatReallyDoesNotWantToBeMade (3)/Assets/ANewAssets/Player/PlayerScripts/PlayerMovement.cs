@@ -14,6 +14,13 @@ public class PlayerMovement : MonoBehaviour
     float xInput;
     float yInput;
 
+    [Header("Keybinds")]
+    [SerializeField] KeyCode AttackKey = KeyCode.Mouse0;
+
+    [Header("Attack")]
+    public bool Attack1Over;
+    public bool Attacking;
+
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -21,17 +28,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        xInput = Input.GetAxisRaw("Horizontal");
-        yInput = Input.GetAxisRaw("Vertical");
+        if (!Attacking)
+        {
+            xInput = Input.GetAxisRaw("Horizontal");
+            yInput = Input.GetAxisRaw("Vertical");
 
-        dir = new Vector2(xInput, yInput).normalized;
+            dir = new Vector2(xInput, yInput).normalized;
+            SetVisualDirection();
+        }
 
-        SetVisualDirection();
+        if (Input.GetKeyDown(AttackKey) && !Attacking)
+        {
+            dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position).normalized;
+            rb.velocity = Vector2.zero;
+            xInput = dir.x;
+            yInput = dir.y;
+            SetVisualDirection();
+            rb.AddForce(dir * 10, ForceMode2D.Impulse);
+            StartCoroutine(Attack());
+        }
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (!Attacking)
+        {
+            Move();
+        }
     }
 
     private void Move()
@@ -41,8 +64,9 @@ public class PlayerMovement : MonoBehaviour
 
     void SetVisualDirection()
     {
-        if(xInput != 0 || yInput != 0)
+        if(xInput != 0 | yInput != 0)
         {
+            Rigs.SetRigAnimatorBool("Walking", true);
             if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
             {
                 if (xInput > 0)
@@ -66,5 +90,21 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            Rigs.SetRigAnimatorBool("Walking", false);
+        }
+    }
+
+    IEnumerator Attack()
+    {
+        Rigs.SetRigAnimatorInt("Attack", 1);
+        Rigs.SetRigAnimatorBool("Walking", false);
+        Attacking = true;
+        Attack1Over = false;
+        yield return new WaitForSeconds(0.3f);
+        Attack1Over = true;
+        Attacking = false;
+        Rigs.SetRigAnimatorInt("Attack", 0);
     }
 }

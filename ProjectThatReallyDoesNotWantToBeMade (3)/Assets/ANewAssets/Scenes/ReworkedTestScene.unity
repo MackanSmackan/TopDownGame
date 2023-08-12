@@ -296,7 +296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &215726954
 Transform:
   m_ObjectHideFlags: 0
@@ -325,7 +325,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: faef36e38c4e0c64f80da166035e8821, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -4187,7 +4187,7 @@ GameObject:
   - component: {fileID: 1159214348}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4463,7 +4463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1250635706
 Animator:
   serializedVersion: 3
@@ -4477,7 +4477,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 6b747b5502219324980bfd447db7f644, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -4901,7 +4901,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 86405dd9c6b0e2849bfabbf4870dc271, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -5039,6 +5039,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rigs: {fileID: 1536019059}
   Speed: 50
+  AttackKey: 323
+  Attack1Over: 0
+  Attacking: 0
 --- !u!114 &1536019059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5475,7 +5478,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 7536b496202353045b57db6f83635929, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -5508,8 +5511,8 @@ MonoBehaviour:
   - {fileID: 488954318}
   - {fileID: 1571664271}
   m_Bounds:
-    m_Center: {x: 0.04474485, y: 0.40292585, z: 0}
-    m_Extent: {x: 0.46746743, y: 0.7817873, z: 0}
+    m_Center: {x: 0.047391713, y: 0.07888007, z: 0}
+    m_Extent: {x: 0.4701143, y: 1.105833, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!212 &1972073250
