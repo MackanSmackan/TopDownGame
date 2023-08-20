@@ -18,8 +18,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] KeyCode AttackKey = KeyCode.Mouse0;
 
     [Header("Attack")]
-    public bool Attack1Over;
+    [SerializeField] float AttackForce;
+
     public bool Attacking;
+    public bool DoAttack2;
+    bool CanAttack2;
 
     private void Start()
     {
@@ -28,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!Attacking)
+        
+        if (!Attacking) // If not attacking then you should move
         {
             xInput = Input.GetAxisRaw("Horizontal");
             yInput = Input.GetAxisRaw("Vertical");
@@ -37,16 +41,18 @@ public class PlayerMovement : MonoBehaviour
             SetVisualDirection();
         }
 
-        if (Input.GetKeyDown(AttackKey) && !Attacking)
+        if (Input.GetKeyDown(AttackKey) && !Attacking | CanAttack2) // Attack input
         {
-            dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position).normalized;
-            rb.velocity = Vector2.zero;
-            xInput = dir.x;
-            yInput = dir.y;
-            SetVisualDirection();
-            rb.AddForce(dir * 10, ForceMode2D.Impulse);
-            StartCoroutine(Attack());
-        }
+            if (!Attacking)
+            {
+                StartCoroutine(Attack());
+            }
+            else if (CanAttack2)
+            {
+                CanAttack2 = false;
+                DoAttack2 = true;
+            }
+        }        
     }
 
     private void FixedUpdate()
@@ -98,13 +104,48 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Attack()
     {
-        Rigs.SetRigAnimatorInt("Attack", 1);
+        // Apply Directional force
+        dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
+        rb.velocity = Vector2.zero;
+        xInput = dir.x;
+        yInput = dir.y;
+        SetVisualDirection();
+        rb.AddForce(dir.normalized * AttackForce, ForceMode2D.Impulse);
+
         Rigs.SetRigAnimatorBool("Walking", false);
+        Rigs.SetRigAnimatorInt("Attack", 1);
+
         Attacking = true;
-        Attack1Over = false;
-        yield return new WaitForSeconds(0.3f);
-        Attack1Over = true;
-        Attacking = false;
-        Rigs.SetRigAnimatorInt("Attack", 0);
+        CanAttack2 = true;
+        yield return new WaitForSeconds(0.2f);
+        CanAttack2 = false;
+
+        //Check how to continue
+        if (!DoAttack2)
+        {
+            //End Attack
+            Attacking = false;
+            Rigs.SetRigAnimatorInt("Attack", 0);
+            DoAttack2 = false;
+        }
+        else
+        {
+            Rigs.SetRigAnimatorInt("Attack", 2);
+
+            // Apply Directional force
+            dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position).normalized;
+            rb.velocity = Vector2.zero;
+            xInput = dir.x;
+            yInput = dir.y;
+            SetVisualDirection();
+            rb.AddForce(dir * AttackForce, ForceMode2D.Impulse);
+
+            yield return new WaitForSeconds(0.2f);
+
+            //End attack
+            Attacking = false;
+            Rigs.SetRigAnimatorInt("Attack", 0);
+            DoAttack2 = false;
+        }
     }
 }

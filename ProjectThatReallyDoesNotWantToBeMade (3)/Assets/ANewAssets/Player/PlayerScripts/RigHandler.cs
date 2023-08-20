@@ -57,17 +57,61 @@ public class RigHandler : MonoBehaviour
 
     public void SetRigAnimatorInt(string ParameterName, int Value)
     {
-        NorthAnimator.SetInteger(ParameterName, Value);
-        SouthAnimator.SetInteger(ParameterName, Value);
-        EastAnimator.SetInteger(ParameterName, Value);
-        WestAnimator.SetInteger(ParameterName, Value);
+        if(NorthAnimator.gameObject.activeSelf)
+        {
+            NorthAnimator.SetInteger(ParameterName, Value);
+        }
+        if (SouthAnimator.gameObject.activeSelf)
+        {
+            SouthAnimator.SetInteger(ParameterName, Value);
+        }
+        if (EastAnimator.gameObject.activeSelf)
+        {
+            EastAnimator.SetInteger(ParameterName, Value);
+        }
+        if (WestAnimator.gameObject.activeSelf)
+        {
+            WestAnimator.SetInteger(ParameterName, Value);
+        }
+    }
+
+    public void SetRigAnimatorFloat(string ParameterName, float Value)
+    {
+        if (NorthAnimator.gameObject.activeSelf)
+        {
+            NorthAnimator.SetFloat(ParameterName, Value);
+        }
+        if (SouthAnimator.gameObject.activeSelf)
+        {
+            SouthAnimator.SetFloat(ParameterName, Value);
+        }
+        if (EastAnimator.gameObject.activeSelf)
+        {
+            EastAnimator.SetFloat(ParameterName, Value);
+        }
+        if (WestAnimator.gameObject.activeSelf)
+        {
+            WestAnimator.SetFloat(ParameterName, Value);
+        }
     }
 
     public void SetRigAnimatorBool(string ParameterName, bool Value)
     {
-        NorthAnimator.SetBool(ParameterName, Value);
-        SouthAnimator.SetBool(ParameterName, Value);
-        EastAnimator.SetBool(ParameterName, Value);
-        WestAnimator.SetBool(ParameterName, Value);
+        if (NorthAnimator.gameObject.activeSelf)
+        {
+            NorthAnimator.SetBool(ParameterName, Value);
+        }
+        if (SouthAnimator.gameObject.activeSelf)
+        {
+            SouthAnimator.SetBool(ParameterName, Value);
+        }
+        if (EastAnimator.gameObject.activeSelf)
+        {
+            EastAnimator.SetBool(ParameterName, Value);
+        }
+        if (WestAnimator.gameObject.activeSelf)
+        {
+            WestAnimator.SetBool(ParameterName, Value);
+        }
     }
 }
