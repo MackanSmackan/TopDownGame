@@ -57,22 +57,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!Attacking)
-        {
-            Move();
-        }
+        Move();
     }
 
     private void Move()
     {
-        rb.AddForce(dir * Speed, ForceMode2D.Force);
+        if(!Attacking)
+        {
+            rb.AddForce(dir * Speed, ForceMode2D.Force);
+        }
     }
 
     void SetVisualDirection()
     {
         if(xInput != 0 | yInput != 0)
         {
-            Rigs.SetRigAnimatorBool("Walking", true);
+            if (!Attacking)
+            {
+                Rigs.SetRigAnimatorBool("Walking", true);
+            }
             if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
             {
                 if (xInput > 0)
@@ -110,14 +113,14 @@ public class PlayerMovement : MonoBehaviour
         xInput = dir.x;
         yInput = dir.y;
         SetVisualDirection();
-        rb.AddForce(dir.normalized * AttackForce, ForceMode2D.Impulse);
+        rb.AddForce(-dir.normalized * AttackForce, ForceMode2D.Impulse);
 
         Rigs.SetRigAnimatorBool("Walking", false);
         Rigs.SetRigAnimatorInt("Attack", 1);
 
         Attacking = true;
         CanAttack2 = true;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         CanAttack2 = false;
 
         //Check how to continue
@@ -138,7 +141,7 @@ public class PlayerMovement : MonoBehaviour
             xInput = dir.x;
             yInput = dir.y;
             SetVisualDirection();
-            rb.AddForce(dir * AttackForce, ForceMode2D.Impulse);
+            rb.AddForce(-dir * AttackForce, ForceMode2D.Impulse);
 
             yield return new WaitForSeconds(0.2f);
 
